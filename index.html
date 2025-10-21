@@ -28,7 +28,7 @@
       content="Wykrywamy ukryte wady, przygotowujemy raport i pomagamy w negocjacjach."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/hero-1440.jpg" />
+    <meta property="og:image" content="hero-1440.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" href="logo.svg" type="image/svg+xml" />
@@ -36,8 +36,8 @@
     <style>
       @font-face {
         font-family: "Satoshi Variable";
-        src: url("/fonts/Satoshi-Variable.woff2") format("woff2-variations"),
-          url("/fonts/Satoshi-Variable.woff2") format("woff2");
+        src: url("fonts/Satoshi-Variable.woff2") format("woff2-variations"),
+          url("fonts/Satoshi-Variable.woff2") format("woff2");
         font-weight: 300 900;
         font-display: swap;
         font-style: normal;
@@ -151,23 +151,24 @@
         scroll-margin-top: 90px;
       }
       .section {
-        padding: 72px 0;
+        padding: 56px 0;
       }
       .section--alt {
-        background: var(--bg-card);
+        background: var(--header);
       }
 
       /* ===== HERO (AVIF + WebP tło) ===== */
       .hero {
+        padding: 72px 0;
         background: linear-gradient(
             90deg,
             rgba(255, 255, 255, 1) 0%,
             rgba(255, 255, 255, 0) 75%
           ),
           image-set(
-              url("/hero-2000.avif") type("image/avif") 3x,
-              url("/hero-1440.avif") type("image/avif") 2x,
-              url("/hero-800.avif") type("image/avif") 1x
+              url("hero-2000.avif") type("image/avif") 3x,
+              url("hero-1440.avif") type("image/avif") 2x,
+              url("hero-800.avif") type("image/avif") 1x
             )
             right/cover no-repeat;
       }
@@ -181,9 +182,9 @@
               rgba(255, 255, 255, 0) 75%
             ),
             image-set(
-                url("/hero-2000.webp") type("image/webp") 3x,
-                url("/hero-1440.webp") type("image/webp") 2x,
-                url("/hero-800.webp") type("image/webp") 1x
+                url("hero-2000.webp") type("image/webp") 3x,
+                url("hero-1440.webp") type("image/webp") 2x,
+                url("hero-800.webp") type("image/webp") 1x
               )
               right/cover no-repeat;
         }
@@ -236,21 +237,45 @@
       }
 
       /* HOW */
+      #jak-dzialamy {
+        letter-spacing: 1px;
+        color: #fff;
+      }
+      .desc-card > *:nth-child(1) {
+        margin: 0 0 3px;
+        font-size: 36px;
+        font-weight: 700;
+      }
+      .desc-card *:nth-child(2) {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 500;
+      }
+      .steps-warpper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
       .steps {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 28px;
-      }
-      .step {
-        background: #fff;
-        border-radius: var(--radius);
-        padding: 24px;
-        box-shadow: var(--shadow);
+        column-gap: 84px;
+        row-gap: 72px;
+        margin-bottom: 28px;
+        line-height: 1.4;
+        text-align: left;
       }
       .step__num {
-        color: var(--primary);
-        font-weight: 800;
-        font-size: 22px;
+        font-weight: 700;
+        font-size: 48px;
+        padding-bottom: 12px;
+        margin-bottom: 24px;
+        border-bottom: 3px solid var(--primary);
+      }
+      .step .desc-card p {
+        font-size: 20px;
       }
 
       /* ===== SERVICES (tło) ===== */
@@ -259,9 +284,9 @@
         box-shadow: var(--shadow);
         padding: 28px;
         background: image-set(
-            url("/service_bg-2000.avif") type("image/avif") 3x,
-            url("/service_bg-1440.avif") type("image/avif") 2x,
-            url("/service_bg-800.avif") type("image/avif") 1x
+            url("service_bg-2000.avif") type("image/avif") 3x,
+            url("service_bg-1440.avif") type("image/avif") 2x,
+            url("service_bg-800.avif") type("image/avif") 1x
           )
           center/cover no-repeat;
       }
@@ -270,9 +295,9 @@
       ) {
         .services {
           background: image-set(
-              url("/service_bg-2000.webp") type("image/webp") 3x,
-              url("/service_bg-1440.webp") type("image/webp") 2x,
-              url("/service_bg-800.webp") type("image/webp") 1x
+              url("service_bg-2000.webp") type("image/webp") 3x,
+              url("service_bg-1440.webp") type("image/webp") 2x,
+              url("service_bg-800.webp") type("image/webp") 1x
             )
             center/cover no-repeat;
         }
@@ -303,9 +328,9 @@
         color: #fff;
         padding: 40px;
         background: image-set(
-              url("/about-bg-2000.avif") type("image/avif") 3x,
-              url("/about-bg-1440.avif") type("image/avif") 2x,
-              url("/about-bg-800.avif") type("image/avif") 1x
+              url("about-bg-2000.avif") type("image/avif") 3x,
+              url("about-bg-1440.avif") type("image/avif") 2x,
+              url("about-bg-800.avif") type("image/avif") 1x
             )
             right/cover no-repeat,
           #111;
@@ -315,9 +340,9 @@
       ) {
         .about__inner {
           background: image-set(
-                url("/about-bg-2000.webp") type("image/webp") 3x,
-                url("/about-bg-1440.webp") type("image/webp") 2x,
-                url("/about-bg-800.webp") type("image/webp") 1x
+                url("about-bg-2000.webp") type("image/webp") 3x,
+                url("about-bg-1440.webp") type("image/webp") 2x,
+                url("about-bg-800.webp") type("image/webp") 1x
               )
               right/cover no-repeat,
             #111;
@@ -332,9 +357,9 @@
         color: #fff;
         background: #232425;
         background: image-set(
-              url("/questions_bg-2000.avif") type("image/avif") 3x,
-              url("/questions_bg-1440.avif") type("image/avif") 2x,
-              url("/questions_bg-800.avif") type("image/avif") 1x
+              url("questions_bg-2000.avif") type("image/avif") 3x,
+              url("questions_bg-1440.avif") type("image/avif") 2x,
+              url("questions_bg-800.avif") type("image/avif") 1x
             )
             right bottom / 45% auto no-repeat,
           var(--header);
@@ -344,9 +369,9 @@
       ) {
         .faq {
           background: image-set(
-                url("/questions_bg-2000.webp") type("image/webp") 3x,
-                url("/questions_bg-1440.webp") type("image/webp") 2x,
-                url("/questions_bg-800.webp") type("image/webp") 1x
+                url("questions_bg-2000.webp") type("image/webp") 3x,
+                url("questions_bg-1440.webp") type("image/webp") 2x,
+                url("questions_bg-800.webp") type("image/webp") 1x
               )
               right bottom / 45% auto no-repeat,
             var(--header);
@@ -485,7 +510,7 @@
         "@type": "LocalBusiness",
         "name": "Pewny Odbiór",
         "url": "https://twojadomena.pl",
-        "image": "/hero-1440.jpg",
+        "image": "hero-1440.jpg",
         "telephone": "+48 698 510 511",
         "email": "pewnyodbierdomu@gmail.com",
         "address": {
@@ -600,28 +625,45 @@
       </section>
 
       <section id="jak-dzialamy" class="section section--alt">
-        <div class="container">
-          <h2>Jak działamy</h2>
+        <div class="container steps-warpper">
+          <div class="desc-card">
+            <h2>Jak działamy</h2>
+            <p>Prosty proces – od zgłoszenia po odbiór</p>
+          </div>
           <div class="steps" style="margin-top: 20px">
             <div class="step">
               <div class="step__num">01</div>
-              <h3>Kontakt</h3>
-              <p class="muted">Umawiamy termin online lub telefonicznie.</p>
+              <div class="desc-card">
+                <h3>Kontakt</h3>
+                <p>Umawiamy termin online lub telefonicznie.</p>
+              </div>
             </div>
             <div class="step">
               <div class="step__num">02</div>
-              <h3>Wizyta na miejscu</h3>
-              <p class="muted">Przyjeżdżamy z niezbędnym sprzętem.</p>
+              <div class="desc-card">
+                <h3>Spotkanie na miejscu</h3>
+                <p>
+                  Przychodzimy na odbiór z niezbędnym <br />
+                  sprzętem
+                </p>
+              </div>
             </div>
             <div class="step">
               <div class="step__num">03</div>
-              <h3>Wykrycie usterek</h3>
-              <p class="muted">Sprawdzamy każdy detal techniczny.</p>
+              <div class="desc-card">
+                <h3>Wykrycie usterek</h3>
+                <p>Sprawdzamy każdy detal techniczny.</p>
+              </div>
             </div>
             <div class="step">
               <div class="step__num">04</div>
-              <h3>Raport i wsparcie</h3>
-              <p class="muted">Otrzymujesz raport i wsparcie.</p>
+              <div class="desc-card">
+                <h3>Raport i wsparcie</h3>
+                <p>
+                  Otrzymujesz raport, a my pomagamy <br />
+                  w negocjacjach z deweloperem
+                </p>
+              </div>
             </div>
           </div>
         </div>
