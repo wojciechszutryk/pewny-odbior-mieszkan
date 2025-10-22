@@ -279,67 +279,112 @@
       }
 
       /* ===== SERVICES (tło) ===== */
+      #uslugi2 {
+        background: #e5e6e9;
+      }
       .services {
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        padding: 28px;
-        background: image-set(
-            url("service_bg-2000.avif") type("image/avif") 3x,
-            url("service_bg-1440.avif") type("image/avif") 2x,
-            url("service_bg-800.avif") type("image/avif") 1x
-          )
-          center/cover no-repeat;
+        background-position: 25% 75%;
+        background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(231, 231, 234, 0) 50%,
+            rgba(231, 231, 234, 1) 100%
+          ),
+          image-set(
+              url("service_bg-2000.avif") type("image/avif") 3x,
+              url("service_bg-1440.avif") type("image/avif") 2x,
+              url("service_bg-800.avif") type("image/avif") 1x
+            )
+            center/cover no-repeat;
+        background-size: 70%;
+        background-position: left;
       }
       @supports not (
         background: image-set(url("x.avif") type("image/avif") 1x)
       ) {
         .services {
-          background: image-set(
-              url("service_bg-2000.webp") type("image/webp") 3x,
-              url("service_bg-1440.webp") type("image/webp") 2x,
-              url("service_bg-800.webp") type("image/webp") 1x
-            )
-            center/cover no-repeat;
+          background: linear-gradient(
+              90deg,
+              rgba(255, 255, 255, 0) 0%,
+              rgba(231, 231, 234, 0) 50%,
+              rgba(231, 231, 234, 1) 100%
+            ),
+            image-set(
+                url("service_bg-2000.webp") type("image/webp") 3x,
+                url("service_bg-1440.webp") type("image/webp") 2x,
+                url("service_bg-800.webp") type("image/webp") 1x
+              )
+              center/cover no-repeat;
         }
       }
+      .services__container {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        padding: 80px 0 64px;
+      }
+      .services__content {
+        line-height: 1;
+        width: 58%;
+      }
+      .services__container .desc-card p {
+        font-size: 20px;
+      }
+      .services__disclaimer {
+        width: 100%;
+        margin-top: 53px;
+        font-weight: 700;
+        font-size: 28px;
+        text-align: center;
+      }
+      .services__disclaimer strong {
+        color: var(--primary);
+      }
       .services__grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 24px;
+        margin-top: 44px;
+      }
+      .services__item {
+        font-size: 20px;
       }
       .check {
         display: flex;
         gap: 12px;
-        align-items: flex-start;
       }
 
       /* ===== ABOUT (tło) ===== */
+
       .about {
-        border-radius: var(--radius);
-        overflow: hidden;
-        box-shadow: var(--shadow);
-        background: #111;
-      }
-      .about__inner {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 28px;
-        align-items: center;
-        color: #fff;
-        padding: 40px;
-        background: image-set(
+        color: #000;
+        line-height: 1.2;
+        padding: 82px 0;
+        background: linear-gradient(
+            90deg,
+            #ffffff 21%,
+            rgba(255, 255, 255, 0.6) 54%,
+            rgba(255, 255, 255, 0) 63%
+          ),
+          image-set(
               url("about-bg-2000.avif") type("image/avif") 3x,
               url("about-bg-1440.avif") type("image/avif") 2x,
               url("about-bg-800.avif") type("image/avif") 1x
             )
-            right/cover no-repeat,
+            bottom 10% left 120px / cover no-repeat,
           #111;
       }
       @supports not (
         background: image-set(url("x.avif") type("image/avif") 1x)
       ) {
-        .about__inner {
-          background: image-set(
+        .about {
+          background: linear-gradient(
+              90deg,
+              #ffffff 21%,
+              rgba(255, 255, 255, 0.6) 54%,
+              rgba(255, 255, 255, 0) 63%
+            ),
+            image-set(
                 url("about-bg-2000.webp") type("image/webp") 3x,
                 url("about-bg-1440.webp") type("image/webp") 2x,
                 url("about-bg-800.webp") type("image/webp") 1x
@@ -347,6 +392,16 @@
               right/cover no-repeat,
             #111;
         }
+      }
+      .about__content {
+        width: 50%;
+      }
+
+      /* ===== Opinion ====== */
+      .opinion__heading {
+        font-weight: 700;
+        font-size: 36px;
+        text-align: center;
       }
 
       /* ===== FAQ (tło) ===== */
@@ -484,13 +539,6 @@
       h2 {
         margin: 0 0 18px;
         font-size: 30px;
-      }
-      .eyebrow {
-        font-size: 13px;
-        font-weight: 800;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: #666;
       }
       .list {
         display: grid;
@@ -635,7 +683,7 @@
               <div class="step__num">01</div>
               <div class="desc-card">
                 <h3>Kontakt</h3>
-                <p>Umawiamy termin online lub telefonicznie.</p>
+                <p>Umawiamy termin online lub telefonicznie</p>
               </div>
             </div>
             <div class="step">
@@ -652,7 +700,7 @@
               <div class="step__num">03</div>
               <div class="desc-card">
                 <h3>Wykrycie usterek</h3>
-                <p>Sprawdzamy każdy detal techniczny.</p>
+                <p>Sprawdzamy każdy detal techniczny</p>
               </div>
             </div>
             <div class="step">
@@ -669,112 +717,134 @@
         </div>
       </section>
 
-      <section id="uslugi" class="section">
-        <div class="container">
-          <div class="services">
-            <h2>Nasze usługi</h2>
-            <div class="services__grid" style="margin-top: 20px">
-              <div class="list">
-                <div class="item check">
-                  <img
-                    src="checkmark.svg"
-                    alt=""
-                    width="20"
-                    height="20"
-                    loading="lazy"
-                  />
-                  <div>
-                    <strong>Odbiór mieszkania od dewelopera</strong><br /><span
-                      class="muted"
-                      >Instalacje, stolarka, powierzchnie, zgodność z
-                      umową.</span
-                    >
-                  </div>
-                </div>
-                <div class="item check">
-                  <img
-                    src="checkmark.svg"
-                    alt=""
-                    width="20"
-                    height="20"
-                    loading="lazy"
-                  />
-                  <div>
-                    <strong>Odbiór z termowizją</strong><br /><span
-                      class="muted"
-                      >Mostki termiczne, zawilgocenia, nieszczelności.</span
-                    >
-                  </div>
-                </div>
-                <div class="item check">
-                  <img
-                    src="checkmark.svg"
-                    alt=""
-                    width="20"
-                    height="20"
-                    loading="lazy"
-                  />
-                  <div>
-                    <strong>Odbiór domu od dewelopera</strong><br /><span
-                      class="muted"
-                      >Fundamenty, izolacje, instalacje.</span
-                    >
-                  </div>
-                </div>
-                <div class="item check">
-                  <img
-                    src="checkmark.svg"
-                    alt=""
-                    width="20"
-                    height="20"
-                    loading="lazy"
-                  />
-                  <div>
-                    <strong>Inspekcje na rynku wtórnym</strong><br /><span
-                      class="muted"
-                      >Ocena techniczna przed zakupem.</span
-                    >
-                  </div>
-                </div>
+      <section id="uslugi2">
+        <!-- uslugi2 to be romoved -->
+        <section id="uslugi" class="services">
+          <div class="container services__container">
+            <div class="services__content">
+              <div class="desc-card">
+                <h2>Nasze usługi</h2>
+                <p>Profesjonalne odbiory i inspekcje</p>
               </div>
-              <div class="about">
-                <div
-                  class="about__inner"
-                  aria-label="Zdjęcie ilustracyjne w tle"
-                >
-                  <div>
-                    <h3>Indywidualna wycena</h3>
-                    <p class="muted">Dopasowana do lokalizacji i potrzeb.</p>
-                    <a
-                      href="#kontakt"
-                      class="btn btn--primary"
-                      style="margin-top: 20px"
-                      >Zapytaj o termin</a
+              <div class="services__grid">
+                <div class="check">
+                  <img
+                    src="checkmark.svg"
+                    alt=""
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                  />
+                  <div class="services__item">
+                    <strong>Odbiór techniczny mieszkania od dewelopera</strong
+                    ><br /><span
+                      >Sprawdzimy instalacje, stolarkę, powierzchnie i zgodność
+                      przedmiotu z umową.</span
                     >
                   </div>
-                  <div aria-hidden="true"></div>
+                </div>
+                <div class="check">
+                  <img
+                    src="checkmark.svg"
+                    alt=""
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                  />
+                  <div class="services__item">
+                    <strong>Odbiór z termowizją</strong><br /><span
+                      >Wykryjemy mostki termiczne, nieszczelności, zawilgocenia
+                      i problemy z izolacją.</span
+                    >
+                  </div>
+                </div>
+                <div class="check">
+                  <img
+                    src="checkmark.svg"
+                    alt=""
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                  />
+                  <div class="services__item">
+                    <strong>Odbiór domu od dewelopera</strong><br /><span
+                      >Pełna kontrola fundamentów, izolacji, instalacji
+                      powierzchni oraz przynależności.</span
+                    >
+                  </div>
+                </div>
+                <div class="check">
+                  <img
+                    src="checkmark.svg"
+                    alt=""
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                  />
+                  <div class="services__item">
+                    <strong
+                      >Inspekcja mieszkania lub domu na rynku wtórnym</strong
+                    ><br /><span
+                      >Rzetelna ocena stanu technicznego nieruchomości przed
+                      zakupem.</span
+                    >
+                  </div>
+                </div>
+                <div class="check">
+                  <img
+                    src="checkmark.svg"
+                    alt=""
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                  />
+                  <div class="services__item">
+                    <strong
+                      >Pomiar powierzchni użytkowej lokalu
+                      (rozliczeniowej)</strong
+                    ><br /><span
+                      >Rzetelny pomiar powierzchni potwierdzony przez osobę
+                      uprawnioną do jego wykonania.</span
+                    >
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="services__disclaimer">
+              Każda wycena przygotowywana jest <strong>indywidualnie</strong>
+              <br />– dostosowana do Twoich potrzeb i lokalizacji.
+            </div>
           </div>
-        </div>
+        </section>
       </section>
 
-      <section id="o-nas" class="section">
+      <section id="o-nas" class="about">
         <div class="container">
-          <div>
-            <span class="eyebrow">O nas</span>
-            <h2>Eksperci z doświadczeniem w budownictwie i technice</h2>
-            <p class="muted">
-              Zespół inżynierów z wieloletnim doświadczeniem i dostępem do
-              specjalistycznego sprzętu.
+          <div class="about__content">
+            <div class="desc-card">
+              <span>O nas</span>
+              <h2>Eksperci z doświadczeniem w budownictwie i technice</h2>
+            </div>
+            <p>
+              Jesteśmy zespołem inżynierów budownictwa z wieloletnim
+              doświadczeniem oraz uprawnieniami konstrukcyjno-budowlanymi
+              Polskiej Izby Inżynierów Budownictwa  do prowadzenia robót
+              budowlanych bez ograniczeń. Dzięki wiedzy i specjalistycznemu
+              sprzętowi gwarantujemy pewny i bezpieczny odbiór nieruchomości.
+              Każdy odbiór traktujemy indywidualnie – naszym celem jest Twój
+              spokój i pewność, że inwestujesz w nieruchomość bez wad. Pracujemy
+              niezależnie – stoimy zawsze po stronie klienta, a nie dewelopera.
+              Z nami odbiór przebiega sprawnie, rzetelnie i bez stresu. Dzielimy
+              się pomocnymi radami z zakresu wykończenia, odpowiadamy na każde
+              pytanie klienta.
             </p>
           </div>
         </div>
       </section>
 
-      <section id="opinie" class="section">
+      <section id="opinie" class="section opinion">
         <div class="container">
+          <p class="opinion__heading">Opinie</p>
           <div class="list">
             <div class="item">
               <strong>100% klientów zadowolonych</strong><br /><span
