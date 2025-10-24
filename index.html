@@ -403,51 +403,89 @@
         font-size: 36px;
         text-align: center;
       }
+      .opinion__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 54px;
+      }
+      .opinion__item {
+        align-items: flex-start;
+        gap: 4px;
+        font-weight: 500;
+        padding: 32px;
+      }
+      .opinion__icon {
+        font-size: 100px;
+        color: var(--primary);
+        height: 32px;
+        line-height: 1;
+        margin: 0;
+      }
 
       /* ===== FAQ (tło) ===== */
       .faq {
-        border-radius: var(--radius);
-        padding: 28px;
-        box-shadow: var(--shadow);
-        color: #fff;
-        background: #232425;
-        background: image-set(
-              url("questions_bg-2000.avif") type("image/avif") 3x,
-              url("questions_bg-1440.avif") type("image/avif") 2x,
-              url("questions_bg-800.avif") type("image/avif") 1x
-            )
-            right bottom / 45% auto no-repeat,
-          var(--header);
+        color: var(--white);
+        background-color: var(--header);
       }
-      @supports not (
-        background: image-set(url("x.avif") type("image/avif") 1x)
-      ) {
-        .faq {
-          background: image-set(
-                url("questions_bg-2000.webp") type("image/webp") 3x,
-                url("questions_bg-1440.webp") type("image/webp") 2x,
-                url("questions_bg-800.webp") type("image/webp") 1x
-              )
-              right bottom / 45% auto no-repeat,
-            var(--header);
-        }
+      .faq__container {
+        display: flex;
+        align-items: flex-end;
+        /* margin-right: 0;
+        padding-right: 0; */
+      }
+      .faq__heading {
+        margin: 48px 0;
+        font-size: 36px;
+      }
+      .faq__hero {
+        position: relative;
+        height: 700px;
+        width: 700px;
+        overflow: hidden;
+      }
+      .faq__circle {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        bottom: -22%;
+        right: -15%;
+        border-radius: 50%;
+        background-color: var(--primary);
+      }
+      .faq__img {
+        background: url(questions_bg.png) -300px / cover no-repeat;
+        width: 750px;
+        height: 750px;
+        position: absolute;
+        bottom: 0;
       }
       .accordion {
         display: grid;
         gap: 12px;
+        max-width: 730px;
         margin-top: 8px;
+      }
+      .accordion > div {
+        padding-bottom: 18px;
+        border-bottom: 1px solid #fff;
+      }
+      .accordion > div:last-of-type {
+        border-bottom: 0;
       }
       .accordion button {
         width: 100%;
         text-align: left;
-        background: #2d2e2f;
+        font-size: 24px;
+        font-weight: 700;
+        background: transparent;
         color: #fff;
         border: 0;
-        padding: 18px 48px 18px 16px;
-        border-radius: 14px;
+        padding: 12px 48px 6px 16px;
         position: relative;
         cursor: pointer;
-        font-weight: 600;
+      }
+      .accordion button[aria-expanded="true"] {
+        color: var(--primary);
       }
       .accordion button:after {
         content: "";
@@ -458,22 +496,24 @@
         height: 18px;
         translate: 0 -50%;
         background: url("chevron.svg") center/contain no-repeat;
+
+        transform: rotate(90deg);
         transition: transform 0.2s;
       }
       .accordion button[aria-expanded="true"]:after {
-        transform: rotate(180deg);
+        transform: rotate(270deg);
+        background: url("chevron-primary.svg") center/contain no-repeat;
       }
       .accordion .panel {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.25s ease;
-        background: #222;
-        border-radius: 12px;
         padding: 0 16px;
       }
       .accordion .panel__inner {
-        padding: 0 0 16px;
-        color: #e7e7e7;
+        padding-bottom: 16px;
+        font-size: 16px;
+        font-weight: 500;
       }
 
       /* CONTACT + footer */
@@ -845,26 +885,40 @@
       <section id="opinie" class="section opinion">
         <div class="container">
           <p class="opinion__heading">Opinie</p>
-          <div class="list">
-            <div class="item">
-              <strong>100% klientów zadowolonych</strong><br /><span
-                class="muted"
-                >Klienci deklarują chęć ponownej współpracy.</span
-              >
+          <div class="opinion__list">
+            <div class="card opinion__item">
+              <p class="opinion__icon">”</p>
+              <p>
+                „Dzięki ‘Pewny Odbiór’ odkryliśmy kilkanaście usterek, które
+                deweloper musiał naprawić. Zaoszczędziliśmy sporo nerwów i
+                pieniędzy – zdecydowanie polecam!”
+              </p>
+              <strong>Anna, Kraków</strong>
             </div>
-            <div class="item">
-              <strong>Raport tego samego dnia</strong><br /><span class="muted"
-                >Czytelny i akceptowany przez deweloperów.</span
-              >
+            <div class="card opinion__item">
+              <p class="opinion__icon">”</p>
+              <p>
+                „Profesjonalizm od początku do końca. Raport był szczegółowy i
+                pomógł nam wynegocjować poprawki jeszcze przed przeprowadzką.”
+              </p>
+              <strong>Michał, Kraków</strong>
+            </div>
+            <div class="card opinion__item">
+              <p class="opinion__icon">”</p>
+              <p>
+                „Nie miałam pojęcia, na co zwracać uwagę przy odbiorze. Wszystko
+                zostało wykryte i dokładnie opisane. Polecam każdemu!”
+              </p>
+              <strong> Katarzyna, Kraków</strong>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="container">
-          <div class="faq">
-            <h2>Najczęściej zadawane pytania</h2>
+      <section class="section faq">
+        <div class="container faq__container">
+          <div class="">
+            <h2 class="faq__heading">Najczęściej zadawane pytania</h2>
             <div class="accordion" id="faq-acc">
               <div>
                 <button type="button" aria-controls="p1" aria-expanded="true">
@@ -877,7 +931,8 @@
                   style="max-height: 180px"
                 >
                   <div class="panel__inner">
-                    Nie, możemy wykonać odbiór w Twoim imieniu po upoważnieniu.
+                    Nie, możemy wykonać odbiór w Twoim imieniu. Wystarczy
+                    upoważnienie lub informacja dla dewelopera.
                   </div>
                 </div>
               </div>
@@ -887,7 +942,7 @@
                 </button>
                 <div id="p2" class="panel" role="region">
                   <div class="panel__inner">
-                    Zwykle 1–2 godziny dla mieszkania, 2–3 godziny dla domu.
+                    Średnio 1,5–2h w zależności od metrażu i zakresu.
                   </div>
                 </div>
               </div>
@@ -897,22 +952,72 @@
                 </button>
                 <div id="p3" class="panel" role="region">
                   <div class="panel__inner">
-                    Tak, pomagamy w korespondencji z deweloperem i weryfikujemy
-                    naprawy.
+                    Tak, pomagamy w komunikacji z deweloperem i egzekwowaniu
+                    poprawek.
                   </div>
                 </div>
               </div>
               <div>
                 <button type="button" aria-controls="p4" aria-expanded="false">
-                  Czy przygotowujecie raport pisemny?
+                  Czy mogę zamówić odbiór z dnia na dzień?
                 </button>
                 <div id="p4" class="panel" role="region">
                   <div class="panel__inner">
-                    Tak, otrzymasz raport PDF i protokół usterek.
+                    W miarę dostępności terminów – staramy się znaleźć szybki
+                    termin.
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button type="button" aria-controls="p4" aria-expanded="false">
+                  Jakim sprzętem wykonujecie odbiory?
+                </button>
+                <div id="p4" class="panel" role="region">
+                  <div class="panel__inner">
+                    Korzystamy z poziomic laserowych, kamer termowizyjnych,
+                    wilgotnościomierzy, mierników elektrycznych i innych
+                    narzędzi.
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button type="button" aria-controls="p4" aria-expanded="false">
+                  Czy wasze usługi obejmują także rynek wtórny?
+                </button>
+                <div id="p4" class="panel" role="region">
+                  <div class="panel__inner">
+                    Tak, przeprowadzamy szczegółowe inspekcje mieszkań i domów
+                    przed zakupem.
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button type="button" aria-controls="p4" aria-expanded="false">
+                  Czy przygotowujecie raport pisemny po odbiorze?
+                </button>
+                <div id="p4" class="panel" role="region">
+                  <div class="panel__inner">
+                    Tak, każdy odbiór kończy się raportem z listą usterek i
+                    rekomendacjami.
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button type="button" aria-controls="p4" aria-expanded="false">
+                  Czy pomagacie negocjować z deweloperem?
+                </button>
+                <div id="p4" class="panel" role="region">
+                  <div class="panel__inner">
+                    Tak, wspieramy w rozmowach i wskazujemy, jak egzekwować
+                    poprawki.
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+          <div class="faq__hero">
+            <div class="faq__circle"></div>
+            <div class="faq__img"></div>
           </div>
         </div>
       </section>
