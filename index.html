@@ -157,6 +157,33 @@
       .section--alt {
         background: var(--header);
       }
+      h1 {
+        font-size: 36px;
+      }
+      h2 {
+        font-size: 36px;
+        font-weight: 700;
+      }
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 24px;
+        }
+        .btn {
+          padding: 10px 18px;
+        }
+        .btn span {
+          font-size: 16px;
+        }
+        h2 {
+          font-size: 24px;
+        }
+        .container {
+          padding: 0 20px;
+        }
+        .section {
+          padding: 32px 0 40px;
+        }
+      }
 
       /* ===== HERO (AVIF + WebP tło) ===== */
       .hero {
@@ -200,22 +227,80 @@
         padding: 48px 0;
         line-height: 1.35;
       }
-      h1 {
-        font-size: 36px;
-      }
       .lead {
         margin: 24px 0 48px;
         font-size: 24px;
         font-weight: 500;
       }
+      @media (max-width: 768px) {
+        .hero__grid {
+          grid-template-columns: 1fr;
+        }
+        .hero__desc {
+          padding: 0 0 280px;
+          text-align: center;
+        }
+        .lead {
+          font-size: 14px;
+        }
+        .hero {
+          padding: 72px 0;
+          background: linear-gradient(
+              0deg,
+              rgba(255, 255, 255, 0) 0%,
+              rgba(255, 255, 255, 0) 35%,
+              rgba(255, 255, 255, 1) 90%
+            ),
+            image-set(
+              url("hero mob-2000.avif") type("image/avif") 1x,
+              url("hero mob-1440.avif") type("image/avif") 2x,
+              url("hero mob-800.avif") type("image/avif") 3x
+            );
+          background-position: 0% 70%;
+          background-size: 110%;
+          background-repeat: no-repeat;
+        }
+        @supports not (
+          background: image-set(url("x.avif") type("image/avif") 1x)
+        ) {
+          .hero {
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0) 35%,
+                rgba(255, 255, 255, 1) 90%
+              ),
+              image-set(
+                  url("hero mob-2000.webp") type("image/webp") 1x,
+                  url("hero mob-1440.webp") type("image/webp") 2x,
+                  url("hero mob-800.webp") type("image/webp") 3x
+                )
+                right/cover no-repeat;
+          }
+        }
+      }
+
+      @media (max-width: 500px) {
+        .hero {
+          background-position: bottom;
+          background-size: 100%;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .hero {
+          background-position: bottom;
+          background-size: 150%;
+          background-color: red;
+        }
+      }
 
       /* WHY */
       #dlaczego {
-        padding: 56px 0 76px;
+        padding: 56px 24px 76px;
       }
       #dlaczego h2 {
         text-align: center;
-        font-size: 36px;
         margin-bottom: 36px;
       }
       .why {
@@ -229,12 +314,36 @@
         align-items: center;
         background: var(--bg-card);
         padding: 44px 24px 12px;
-      }
-      .muted {
-        font-size: 24px;
-        font-weight: 500;
         text-align: center;
-        opacity: 0.9;
+        font-weight: 500;
+        font-size: 24px;
+      }
+      .card img {
+        width: 80px;
+        height: 80px;
+      }
+      @media (max-width: 768px) {
+        #dlaczego {
+          padding: 26px 0 46px;
+        }
+        .why {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+          padding: 0 20px;
+        }
+        .card {
+          font-size: 10px;
+          padding: 20px 12px 16px;
+        }
+        .card img {
+          width: 36px;
+          height: 36px;
+        }
+      }
+      @media (max-width: 1024px) {
+        .why {
+          grid-template-columns: repeat(2, 1fr);
+        }
       }
 
       /* HOW */
@@ -277,6 +386,31 @@
       }
       .step .desc-card p {
         font-size: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .desc-card > *:nth-child(1) {
+          font-size: 20px;
+        }
+        .desc-card *:nth-child(2) {
+          font-size: 14px;
+        }
+        .steps {
+          grid-template-columns: 1fr;
+          row-gap: 32px;
+          text-align: center;
+        }
+        .step__num {
+          width: 50%;
+          justify-self: center;
+          font-size: 24px;
+        }
+        .step .desc-card h3 {
+          font-size: 16px;
+        }
+        .step .desc-card p {
+          font-size: 13px;
+        }
       }
 
       /* ===== SERVICES (tło) ===== */
@@ -352,6 +486,61 @@
       .check {
         display: flex;
         gap: 12px;
+      }
+      @media (max-width: 768px) {
+        #uslugi2 {
+          background: linear-gradient(90deg, #eff0f1 0%, #cad2d7 100%);
+        }
+        .services {
+          background: url(tool\ mob.png);
+          background-size: 50% auto;
+          background-position: 0% 100%;
+          background-repeat: no-repeat;
+        }
+        .services__container {
+          padding: 32px 20px 42px;
+          margin: 0 auto;
+        }
+        .services__content {
+          width: 100%;
+        }
+        .services__item {
+          font-size: 12px;
+        }
+        .services__grid {
+          width: fit-content;
+          margin: 24px auto;
+        }
+        .services__container .desc-card {
+          text-align: center;
+        }
+        .services__disclaimer {
+          text-align: right;
+          margin-right: 40px;
+          margin-top: 200px;
+          font-size: 14px;
+          width: 50%;
+        }
+      }
+      @media (max-width: 600px) {
+        .services {
+          background-size: 60% auto;
+          background-position: -20% 100%;
+        }
+        .services__disclaimer {
+          margin-right: 0;
+          margin-top: 150px;
+        }
+      }
+      @media (max-width: 470px) {
+        .services {
+          background-size: 70% auto;
+          background-position: -40% 100%;
+        }
+        .services__disclaimer {
+          margin-top: 100px;
+          width: 50%;
+        }
       }
 
       /* ===== ABOUT (tło) ===== */
@@ -537,7 +726,6 @@
       .contact__container h2 {
         grid-area: heading;
         margin-bottom: 48px;
-        font-size: 36px;
       }
       .contact__list {
         grid-area: list;
@@ -614,8 +802,6 @@
         border-bottom: 1px solid var(--bg-card);
       }
       .footer__title h2 {
-        font-size: 36px;
-        font-weight: 700;
         color: var(--primary);
         margin: 0 0 12px;
       }
@@ -679,7 +865,7 @@
         "url": "https://twojadomena.pl",
         "image": "hero-1440.jpg",
         "telephone": "+48 698 510 511",
-        "email": "pewnyodbierdomu@gmail.com",
+        "email": "pewnyodbiordomu@gmail.com",
         "address": {
           "@type": "PostalAddress",
           "addressRegion": "Małopolska",
@@ -743,50 +929,20 @@
         <h2>Dlaczego warto odebrać mieszkanie z ekspertem?</h2>
         <div class="why" role="list" style="margin-top: 20px">
           <article class="card" role="listitem">
-            <img
-              src="why1.svg"
-              alt=""
-              width="80"
-              height="80"
-              loading="lazy"
-              decoding="async"
-            />
-            <p class="muted">Wykrywamy ukryte wady niewidoczne gołym okiem</p>
+            <img src="why1.svg" alt="" loading="lazy" decoding="async" />
+            <p>Wykrywamy ukryte wady niewidoczne gołym okiem</p>
           </article>
           <article class="card" role="listitem">
-            <img
-              src="why2.svg"
-              alt=""
-              width="80"
-              height="80"
-              loading="lazy"
-              decoding="async"
-            />
-            <p class="muted">
-              Sporządzamy profesjonalny protokół dla dewelopera
-            </p>
+            <img src="why2.svg" alt="" loading="lazy" decoding="async" />
+            <p>Sporządzamy profesjonalny protokół dla dewelopera</p>
           </article>
           <article class="card" role="listitem">
-            <img
-              src="why3.svg"
-              alt=""
-              width="80"
-              height="80"
-              loading="lazy"
-              decoding="async"
-            />
-            <p class="muted">Oszczędzasz na kosztach napraw w przyszłości</p>
+            <img src="why3.svg" alt="" loading="lazy" decoding="async" />
+            <p>Oszczędzasz na kosztach napraw w przyszłości</p>
           </article>
           <article class="card" role="listitem">
-            <img
-              src="why4.svg"
-              alt=""
-              width="80"
-              height="80"
-              loading="lazy"
-              decoding="async"
-            />
-            <p class="muted">Odbiór szybki i bezstresowy</p>
+            <img src="why4.svg" alt="" loading="lazy" decoding="async" />
+            <p>Odbiór szybki i bezstresowy</p>
           </article>
         </div>
       </section>
@@ -1114,8 +1270,8 @@
             </div>
             <div class="contact__item">
               <img src="contact-mail.svg" alt="" /><a
-                href="mailto:pewnyodbierdomu@gmail.com"
-                >pewnyodbierdomu@gmail.com</a
+                href="mailto:pewnyodbiordomu@gmail.com"
+                >pewnyodbiordomu@gmail.com</a
               >
             </div>
           </div>
@@ -1196,8 +1352,8 @@
         <div class="footer__contact">
           <h4>Kontakt:</h4>
           <a href="tel:+48698510511">Tel: +48 698 510 511</a>
-          <a href="mailto:pewnyodbierdomu@gmail.com"
-            >Email: pewnyodbierdomu@gmail.com</a
+          <a href="mailto:pewnyodbiordomu@gmail.com"
+            >Email: pewnyodbiordomu@gmail.com</a
           >
           <div class="social">
             <a href="#" aria-label="Facebook"
