@@ -94,7 +94,6 @@
       .logo strong:nth-child(1) {
         color: var(--primary);
       }
-
       header {
         position: sticky;
         display: flex;
@@ -125,6 +124,89 @@
       .nav__links a:hover,
       .nav__links a.is-active {
         color: var(--primary);
+      }
+      /* === MOBILE HEADER === */
+      .nav .icon-close {
+        display: none;
+      }
+      .mobile-menu-socials {
+        display: none;
+        position: absolute;
+        bottom: 40px;
+        margin: 0 auto;
+        gap: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .mobile-header-control img {
+        height: 24px;
+        width: 24px;
+      }
+      .mobile-header-toggle {
+        display: none;
+        border: 0;
+        background-color: var(--header);
+      }
+      @media (max-width: 1032px) {
+        .nav .logo {
+          gap: 0;
+          font-size: 12px;
+        }
+        .nav .logo span strong {
+          font-size: 18px;
+        }
+        .nav .logo img {
+          height: 34px;
+        }
+        .nav__links {
+          display: none;
+        }
+        .nav .icon-hamburger {
+          display: block;
+        }
+        .mobile-header-toggle {
+          display: block;
+        }
+        .nav.open {
+          background-color: var(--header);
+          position: fixed;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+        }
+        .nav.open .mobile-header-toggle {
+          position: absolute;
+          top: 28px;
+          right: 20px;
+        }
+        .nav.open .logo {
+          position: absolute;
+          top: 23px;
+          left: 20px;
+        }
+        .nav.open .mobile-menu-socials {
+          display: flex;
+        }
+        .nav.open .nav__links {
+          display: flex;
+          flex-direction: column;
+          font-weight: 700;
+          margin: 0 auto;
+          gap: 20px;
+        }
+        .nav.open .icon-close {
+          display: block;
+        }
+        .nav.open .icon-hamburger {
+          display: none;
+        }
+      }
+      @media (max-width: 1200px) {
+        .nav__links {
+          margin-left: auto;
+          gap: 10px;
+        }
       }
       .btn {
         appearance: none;
@@ -291,7 +373,6 @@
         .hero {
           background-position: bottom;
           background-size: 150%;
-          background-color: red;
         }
       }
 
@@ -862,7 +943,7 @@
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Pewny Odbiór",
-        "url": "https://twojadomena.pl",
+        "url": "https://pewnyodbiordomu.pl",
         "image": "hero-1440.jpg",
         "telephone": "+48 698 510 511",
         "email": "pewnyodbiordomu@gmail.com",
@@ -872,7 +953,10 @@
           "addressCountry": "PL"
         },
         "areaServed": "Małopolska",
-        "sameAs": ["https://facebook.com/", "https://instagram.com/"]
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61580088790049",
+          "https://www.instagram.com/pewny_odbior_domu_i_mieszkania/"
+        ]
       }
     </script>
   </head>
@@ -902,6 +986,26 @@
           <a href="#opinie" class="js-link">Opinie</a>
           <a href="#kontakt" class="js-link">Kontakt</a>
         </nav>
+        <div class="mobile-menu-socials">
+          <a
+            href="https://www.facebook.com/profile.php?id=61580088790049"
+            aria-label="Facebook"
+          >
+            <img src="fb-icon.svg" alt="Facebook" />
+          </a>
+          <a
+            href="https://www.instagram.com/pewny_odbior_domu_i_mieszkania/"
+            aria-label="Instagram"
+          >
+            <img src="ig-icon.svg" alt="Instagram" />
+          </a>
+        </div>
+        <div class="mobile-header-control">
+          <button class="mobile-header-toggle" aria-label="Otwórz menu">
+            <img src="hamburger.svg" alt="Menu" class="icon-hamburger" />
+            <img src="x.svg" alt="Zamknij" class="icon-close" />
+          </button>
+        </div>
       </div>
     </header>
 
@@ -1356,7 +1460,9 @@
             >Email: pewnyodbiordomu@gmail.com</a
           >
           <div class="social">
-            <a href="#" aria-label="Facebook"
+            <a
+              href="https://www.facebook.com/profile.php?id=61580088790049"
+              aria-label="Facebook"
               ><img src="fb-icon.svg" width="22" height="22" alt=""
             /></a>
             <a
@@ -1378,6 +1484,26 @@
         </nav>
       </div>
     </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.querySelector(".mobile-header-toggle");
+        const menu = document.querySelector("header div.nav");
+        menu.addEventListener("click", (e) => {
+          if (e.target.tagName.toLowerCase() === "a") {
+            menu.classList.remove("open");
+          }
+        });
+
+        toggle.addEventListener("click", () => {
+          const isOpen = menu.classList.toggle("open");
+          toggle.setAttribute(
+            "aria-label",
+            isOpen ? "Zamknij menu" : "Otwórz menu"
+          );
+        });
+      });
+    </script>
 
     <script>
       /* Smooth-scroll + aktywny link */
