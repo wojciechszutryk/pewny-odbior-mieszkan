@@ -144,6 +144,7 @@
       }
       .mobile-header-toggle {
         display: none;
+        cursor: pointer;
         border: 0;
         background-color: var(--header);
       }
@@ -259,6 +260,9 @@
         h2 {
           font-size: 24px;
         }
+        p {
+          font-size: 12px;
+        }
         .container {
           padding: 0 20px;
         }
@@ -326,7 +330,7 @@
           font-size: 14px;
         }
         .hero {
-          padding: 72px 0;
+          padding: 32px 0;
           background: linear-gradient(
               0deg,
               rgba(255, 255, 255, 0) 0%,
@@ -512,7 +516,6 @@
               url("tool-800.avif") type("image/avif") 3x
             )
             center/cover no-repeat;
-        background-position: -100px;
       }
       @supports not (
         background: image-set(url("x.avif") type("image/avif") 1x)
@@ -627,7 +630,6 @@
       /* ===== ABOUT (tło) ===== */
 
       .about {
-        color: #000;
         line-height: 1.2;
         padding: 82px 0;
         background: linear-gradient(
@@ -666,6 +668,62 @@
       .about__content {
         width: 50%;
       }
+      @media (max-width: 768px) {
+        .about {
+          padding: 0;
+          background: image-set(
+            url("about-bg-2000.avif") type("image/avif") 1x,
+            url("about-bg-1440.avif") type("image/avif") 2x,
+            url("about-bg-800.avif") type("image/avif") 3x
+          );
+          @supports not (
+            background: image-set(url("x.avif") type("image/avif") 1x)
+          ) {
+            .about {
+              background: image-set(
+                url("about-bg-2000.webp") type("image/webp") 1x,
+                url("about-bg-1440.webp") type("image/webp") 2x,
+                url("about-bg-800.webp") type("image/webp") 3x
+              );
+            }
+          }
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position-y: 100px;
+        }
+        .about .container {
+          padding: 0;
+        }
+        .about__content {
+          width: 100%;
+          padding: 32px 20px 240px;
+          background: linear-gradient(
+            180deg,
+            #ffffff 61%,
+            rgba(255, 255, 255, 0.6) 67%,
+            rgba(255, 255, 255, 0) 70%
+          );
+        }
+        .about__content .desc-card {
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 650px) {
+        .about {
+          background-position-x: center;
+        }
+      }
+      @media (max-width: 550px) {
+        .about {
+          background-position-y: 110px;
+        }
+      }
+      @media (max-width: 400px) {
+        .about {
+          background-position-x: -20px;
+        }
+      }
 
       /* ===== Opinion ====== */
       .opinion__heading {
@@ -682,6 +740,7 @@
         align-items: flex-start;
         gap: 4px;
         font-weight: 500;
+        text-align: left;
         padding: 32px;
       }
       .opinion__icon {
@@ -690,6 +749,19 @@
         height: 32px;
         line-height: 1;
         margin: 0;
+      }
+      @media (max-width: 768px) {
+        .opinion__icon {
+          font-size: 80px;
+        }
+        .opinion__list {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .opinion__heading {
+          font-size: 20px;
+          margin: 0 0 15px;
+        }
       }
 
       /* ===== FAQ (tło) ===== */
@@ -701,11 +773,11 @@
       .faq__container {
         display: flex;
         align-items: flex-end;
+        overflow: hidden;
         padding-right: 0;
-        /* margin-right: 0;
-        padding-right: 0; */
       }
       .faq__content {
+        z-index: 2;
         padding-bottom: 56px;
       }
       .faq__heading {
@@ -716,7 +788,6 @@
         position: relative;
         height: 700px;
         width: 700px;
-        overflow: hidden;
       }
       .faq__circle {
         position: absolute;
@@ -726,6 +797,14 @@
         right: -180px;
         border-radius: 50%;
         background-color: var(--primary);
+      }
+      .faq__circle::after {
+        content: "";
+        position: absolute;
+        bottom: -50px;
+        height: 200px;
+        width: 100%;
+        background-color: #fff;
       }
       .faq__img {
         background: url(questions_bg.png) -300px / cover no-repeat;
@@ -771,7 +850,7 @@
         width: 18px;
         height: 18px;
         translate: 0 -50%;
-        background: url("chevron.svg") center/contain no-repeat;
+        background: url("chevron-white.svg") center/contain no-repeat;
 
         transform: rotate(90deg);
         transition: transform 0.2s;
@@ -790,6 +869,50 @@
         padding-bottom: 16px;
         font-size: 16px;
         font-weight: 500;
+      }
+      @media (max-width: 768px) {
+        .faq {
+          padding-top: 20px;
+          overflow: hidden;
+        }
+        .faq__heading {
+          font-size: 20px;
+          margin: 12px 0;
+        }
+        .faq__container {
+          flex-direction: column;
+          align-items: center;
+        }
+        .faq__content {
+          padding-right: 20px;
+        }
+        .accordion button {
+          font-size: 14px;
+        }
+        .accordion .panel__inner {
+          font-size: 12px;
+        }
+
+        .faq__hero {
+          height: 300px;
+          width: 100%;
+        }
+        .faq__circle {
+          width: 280px;
+          height: 280px;
+          bottom: -50px;
+          right: -20px;
+        }
+        .faq__circle::after {
+          bottom: -150px;
+          height: 200px;
+        }
+        .faq__img {
+          background: url(questions_bg.png) -100px / cover no-repeat;
+          width: 370px;
+          height: 370px;
+          right: -20px;
+        }
       }
 
       /* CONTACT + footer */
@@ -824,6 +947,7 @@
         align-items: center;
         gap: 20px;
         font-size: 28px;
+        word-break: break-all;
       }
       .contact__area h4 {
         font-size: 32px;
@@ -837,6 +961,7 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-image: url(map.png);
+        background-position: center;
       }
       form {
         grid-area: form;
@@ -869,6 +994,64 @@
         justify-content: center;
         width: 100%;
         margin-top: 42px;
+      }
+
+      @media (max-width: 768px) {
+        .contact {
+          padding: 32px 0;
+        }
+        .contact__container {
+          grid-template-areas:
+            "heading heading"
+            "list list"
+            "form form"
+            "map map";
+        }
+        .contact__container h2 {
+          margin: 0;
+          text-align: center;
+        }
+        .contact__item {
+          font-size: 16px;
+        }
+        .contact__list {
+          gap: 16px;
+          margin-bottom: 40px;
+        }
+        .contact__list h3 {
+          font-size: 16px;
+        }
+        .contact__item img {
+          height: 22px;
+          width: 22px;
+        }
+        form {
+          padding: 32px 24px 54px;
+        }
+        form h3 {
+          font-size: 16px;
+          margin: 0 0 20px;
+        }
+        label {
+          margin: 8px 0 8px;
+          font-size: 14px;
+        }
+        input,
+        textarea {
+          font-size: 13px;
+          padding: 14px 12px;
+        }
+        .contact__area h4 {
+          font-size: 16px;
+          margin: 40px 0 28px;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .contact__map {
+          height: 320px;
+        }
       }
 
       /* //footer */
@@ -935,6 +1118,33 @@
         display: flex;
         gap: 12px;
         align-items: center;
+      }
+
+      @media (max-width: 768px) {
+        .footer__title {
+          padding: 32px 20px;
+        }
+        .footer__title h2 {
+          font-size: 18px;
+        }
+        .footer__title p,
+        .footer__title strong {
+          font-size: 16px;
+        }
+        .footer__grid .logo {
+          flex-basis: unset;
+        }
+        .footer__grid {
+          flex-direction: column;
+          text-align: center;
+          gap: 32px;
+        }
+        .footer__contact .social {
+          justify-content: center;
+        }
+        .footer__grid .logo img {
+          width: 92px;
+        }
       }
     </style>
 
@@ -1223,7 +1433,7 @@
 
       <section id="opinie" class="section opinion">
         <div class="container">
-          <p class="opinion__heading">Opinie</p>
+          <p class="opinion__heading">Opinie klientów</p>
           <div class="opinion__list">
             <div class="card opinion__item">
               <p class="opinion__icon">”</p>
