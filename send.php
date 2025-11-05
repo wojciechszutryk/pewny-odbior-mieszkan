@@ -29,7 +29,7 @@ if (!$name || !$email || !$message || !filter_var($email, FILTER_VALIDATE_EMAIL)
   echo json_encode(['ok'=>false, 'error'=>'validation']); exit;
 }
 
-$to = 'kolega@gmail.com'; // <-- mail odbiorcy
+$to = 'wojtekszutryk@gmail.com'; // <-- mail odbiorcy
 $subject = 'Nowe zgłoszenie z formularza — Pewny Odbiór';
 $body = "Imię i nazwisko: $name\nEmail: $email\nTelefon: $phone\n\nTreść:\n$message";
 
@@ -37,14 +37,14 @@ try {
   $mail = new PHPMailer(true);
   $mail->CharSet = 'UTF-8';
   $mail->isSMTP();
-  $mail->Host = 'smtp.home.pl'; // <-- host SMTP
+  $mail->Host = 'serwer2599835.home.pl'; // <-- host SMTP
   $mail->SMTPAuth = true;
-  $mail->Username = 'twoj_login@twojadomena.pl'; // <-- login skrzynki
-  $mail->Password = 'TWOJE_HASLO';               // <-- hasło
+  $mail->Username = 'wojtek@pewnyodbiordomu.pl'; // <-- login skrzynki
+  $mail->Password = 'Przemek123?';               // <-- hasło
   $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // TLS -> ENCRYPTION_STARTTLS + port 587
   $mail->Port = 465;
 
-  $mail->setFrom('twoj_login@twojadomena.pl', 'Formularz — Pewny Odbiór');
+  $mail->setFrom('wojtek@pewnyodbiordomu.pl', 'Formularz — Pewny Odbiór');
   $mail->addAddress($to);
   $mail->addReplyTo($email, $name);
 
