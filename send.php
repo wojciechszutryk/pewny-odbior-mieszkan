@@ -29,7 +29,7 @@ if (!$name || !$email || !$message || !filter_var($email, FILTER_VALIDATE_EMAIL)
   echo json_encode(['ok'=>false, 'error'=>'validation']); exit;
 }
 
-$to = 'wojtekszutryk@gmail.com'; // <-- mail odbiorcy
+$to = 'pewnyodbiordomu@gmail.com'; // <-- mail odbiorcy
 $subject = 'Nowe zgłoszenie z formularza — Pewny Odbiór';
 $body = "Imię i nazwisko: $name\nEmail: $email\nTelefon: $phone\n\nTreść:\n$message";
 
