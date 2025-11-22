@@ -3,7 +3,7 @@ const path = require("path");
 
 // --- KONFIGURACJA ---
 const INPUT_FILE = "index.html";
-const OUTPUT_FILE = "dist/index.html"; // Zapisuje do nowego pliku w folderze 'dist'
+const OUTPUT_FILE = "index.html"; // Zapisuje do nowego pliku w folderze 'dist'
 
 // Regex dla polskich spójników/przyimków (a, i, o, u, w, z)
 // Znajduje: (spacja + krótki wyraz) + spacja
