@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <!-- todo minify, clean unused class, clear styles, fix seo, check if mail works, images lazy loading (but fetch prority for hero at the top), add frontend form validation (required, regex email etc.), dodac polityke prywatnosci i cookies form  -->
+  <!-- todo minify, clean unused class, clear styles, fix seo, images lazy loading (but fetch prority for hero at the top), add frontend form validation (required, regex email etc.), dodac polityke prywatnosci  -->
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -957,7 +957,7 @@
         grid-area: map;
       }
       .contact__map {
-        height: 540px;
+        height: 340px;
         background-size: contain;
         background-repeat: no-repeat;
         background-image: url(map.png);
@@ -1050,7 +1050,7 @@
 
       @media (max-width: 1024px) {
         .contact__map {
-          height: 320px;
+          height: 200px;
         }
       }
 
@@ -1594,7 +1594,7 @@
             <div class="contact__map"></div>
           </div>
 
-          <form id="contact-form" action="/send.php" method="POST" novalidate>
+          <form id="contact-form" action="/send.php" method="POST">
             <h3>Formularz kontaktowy</h3>
             <label for="name">Imię i nazwisko</label>
             <input
@@ -1612,6 +1612,8 @@
               required
               autocomplete="email"
               placeholder="eg: jan@email.com"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            />
             />
             <label for="phone">Telefon</label>
             <input
@@ -1620,7 +1622,9 @@
               name="phone"
               autocomplete="tel"
               required
-              placeholder="543210987"
+              placeholder="698510511"
+              pattern="^\+?48[ ]?(\d{3}[ ]?){2}\d{3}$|^(\d{3}[ ]?){2}\d{3}$"
+              title="Proszę podać 9 cyfr, opcjonalnie z kodem +48. Dozwolone są spacje (np. +48 48698510511)."
             />
             <label for="message">Wiadomość</label>
             <textarea id="message" name="message" required></textarea>
@@ -1689,8 +1693,9 @@
           <a href="#opinie" class="js-link">Opinie</a>
         </nav>
         <nav class="footer__config">
-          <a href="#" class="js-link">Polityka prywatności </a>
-          <a href="#" class="js-link"> Zarządzaj zgodami</a>
+          <a href="polityka-prywatnosci.pdf" target="_blank" class="js-link"
+            >Polityka prywatności
+          </a>
         </nav>
       </div>
     </footer>
