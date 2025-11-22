@@ -273,7 +273,7 @@
 
       /* ===== HERO (AVIF + WebP tło) ===== */
       .hero {
-        padding: 72px 0;
+        padding: 0;
         background: linear-gradient(
             90deg,
             rgba(255, 255, 255, 1) 0%,
@@ -306,13 +306,14 @@
       }
 
       .hero__grid {
+        padding: 0;
         display: grid;
         grid-template-columns: 1.3fr 0.7fr;
         align-items: center;
         color: var(--black);
       }
       .hero__desc {
-        padding: 48px 0;
+        padding: 130px 0 130px 24px;
         line-height: 1.35;
       }
       .lead {
@@ -320,12 +321,36 @@
         font-size: 24px;
         font-weight: 500;
       }
+      @media (max-width: 1400px) {
+        .hero__desc {
+          background: unset;
+        }
+      }
+
+      @media (max-width: 1100px) {
+        .hero {
+          background-position: -400px;
+        }
+        .hero__desc {
+          background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 75%
+          );
+        }
+      }
+      @media (max-width: 1000px) {
+        .hero {
+          background-position: -600px;
+        }
+      }
       @media (max-width: 768px) {
         .hero__grid {
           grid-template-columns: 1fr;
         }
         .hero__desc {
-          padding: 0 0 280px;
+          background-image: unset;
+          padding: 0 10px 280px;
           text-align: center;
         }
         .lead {
@@ -1064,12 +1089,13 @@
             rgba(255, 255, 255, 0) 63%
           ),
           image-set(
-              url("about-bg-2000.avif") type("image/avif") 1x,
-              url("about-bg-1440.avif") type("image/avif") 2x,
-              url("about-bg-800.avif") type("image/avif") 3x
-            )
-            bottom 10% left 120px / cover no-repeat,
-          #111;
+            url("about-bg-2000.avif") type("image/avif") 1x,
+            url("about-bg-1440.avif") type("image/avif") 2x,
+            url("about-bg-800.avif") type("image/avif") 3x
+          );
+        background-position: bottom 10% left 120px;
+        background-size: cover;
+        background-repeat: no-repeat;
       }
       @supports not (
         background: image-set(url("x.avif") type("image/avif") 1x)
@@ -1082,12 +1108,10 @@
               rgba(255, 255, 255, 0) 63%
             ),
             image-set(
-                url("about-bg-2000.webp") type("image/webp") 1x,
-                url("about-bg-1440.webp") type("image/webp") 2x,
-                url("about-bg-800.webp") type("image/webp") 3x
-              )
-              right/cover no-repeat,
-            #111;
+              url("about-bg-2000.webp") type("image/webp") 1x,
+              url("about-bg-1440.webp") type("image/webp") 2x,
+              url("about-bg-800.webp") type("image/webp") 3x
+            );
         }
       }
       .about__content {
