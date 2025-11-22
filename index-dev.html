@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <!-- Przed minifikacja. Użyj narzędzie /czyszczenie-i-minifikcaja zeby uzyskac zoptymalizowana, produkcyjna wersje  -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pewny Odbiór — Odbiór techniczny mieszkania i domu bez stresu</title>
+    <meta
+      name="description"
+      content="Profesjonalny odbiór mieszkania i domu: wykrywanie usterek, raport i wsparcie w negocjacjach z deweloperem. Szybko, bezstresowo, w Małopolsce."
+    />
+    <meta name="robots" content="index,follow" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- OpenGraph / Twitter -->
+    <meta
+      property="og:title"
+      content="Pewny Odbiór — Odbiór techniczny mieszkania i domu"
+    />
+    <meta
+      property="og:description"
+      content="Wykrywamy ukryte wady, przygotowujemy raport i pomagamy w negocjacjach."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="hero-1440.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="logo.svg" type="image/svg+xml" />
+
+    <style>
+      @font-face {
+        font-family: "Satoshi Variable";
+        src: url("fonts/Satoshi-Variable.woff2") format("woff2-variations"),
+          url("fonts/Satoshi-Variable.woff2") format("woff2");
+        font-weight: 300 900;
+        font-display: swap;
+        font-style: normal;
+      }
+
+      :root {
+        --primary: #5fd93d;
+        --header: #232425;
+        --bg-card: #f2f2f1;
+        --white: #fff;
+        --black: #000;
+        --container: 1280px;
+        --radius: 18px;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: "Satoshi Variable", sans-serif;
+        color: #111;
+        background: #fff;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .container {
+        max-width: var(--container);
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      .logo {
+        display: flex;
+        gap: 20px;
+        line-height: 1;
+        align-items: center;
+      }
+      .logo strong {
+        font-weight: 900;
+        font-size: 22px;
+      }
+      .logo strong:nth-child(1) {
+        color: var(--primary);
+      }
+      header {
+        position: sticky;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        top: 0;
+        z-index: 50;
+        height: 80px;
+        background: var(--header);
+        color: var(--white);
+      }
+      .nav {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav__links {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        font-weight: 500;
+      }
+      .nav__links a {
+        width: 107px;
+        text-align: center;
+      }
+      .nav__links a:hover,
+      .nav__links a.is-active {
+        color: var(--primary);
+      }
+      /* === MOBILE HEADER === */
+      .nav .icon-close {
+        display: none;
+      }
+      .mobile-menu-socials {
+        display: none;
+        position: absolute;
+        bottom: 40px;
+        margin: 0 auto;
+        gap: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .mobile-header-control img {
+        height: 24px;
+        width: 24px;
+      }
+      .mobile-header-toggle {
+        display: none;
+        cursor: pointer;
+        border: 0;
+        background-color: var(--header);
+      }
+      @media (max-width: 1032px) {
+        .nav .logo {
+          gap: 0;
+          font-size: 12px;
+        }
+        .nav .logo span strong {
+          font-size: 18px;
+        }
+        .nav .logo img {
+          height: 34px;
+        }
+        .nav__links {
+          display: none;
+        }
+        .nav .icon-hamburger {
+          display: block;
+        }
+        .mobile-header-toggle {
+          display: block;
+        }
+        .nav.open {
+          background-color: var(--header);
+          position: fixed;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+        }
+        .nav.open .mobile-header-toggle {
+          position: absolute;
+          top: 28px;
+          right: 20px;
+        }
+        .nav.open .logo {
+          position: absolute;
+          top: 23px;
+          left: 20px;
+        }
+        .nav.open .mobile-menu-socials {
+          display: flex;
+        }
+        .nav.open .nav__links {
+          display: flex;
+          flex-direction: column;
+          font-weight: 700;
+          margin: 0 auto;
+          gap: 20px;
+        }
+        .nav.open .icon-close {
+          display: block;
+        }
+        .nav.open .icon-hamburger {
+          display: none;
+        }
+      }
+      @media (max-width: 1200px) {
+        .nav__links {
+          margin-left: auto;
+          gap: 10px;
+        }
+      }
+      .btn {
+        appearance: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        border: 0;
+        cursor: pointer;
+        font-weight: 700;
+        padding: 12px 24px;
+        transition: transform 0.15s, background 0.2s, box-shadow 0.2s;
+      }
+      .btn span {
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+      }
+      .btn img {
+        height: 21px;
+      }
+      .btn--primary {
+        background: var(--primary);
+      }
+      section {
+        scroll-margin-top: 90px;
+      }
+      .section {
+        padding: 56px 0;
+      }
+      .section--alt {
+        background: var(--header);
+      }
+      h1 {
+        font-size: 36px;
+      }
+      h2 {
+        font-size: 36px;
+        font-weight: 700;
+      }
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 24px;
+        }
+        .btn {
+          padding: 10px 18px;
+        }
+        .btn span {
+          font-size: 16px;
+        }
+        h2 {
+          font-size: 24px;
+        }
+        p {
+          font-size: 12px;
+        }
+        .container {
+          padding: 0 20px;
+        }
+        .section {
+          padding: 32px 0 40px;
+        }
+      }
+
+      /* ===== HERO (AVIF + WebP tło) ===== */
+      .hero {
+        padding: 72px 0;
+        background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 75%
+          ),
+          image-set(
+            url("hero-2000.avif") type("image/avif") 1x,
+            url("hero-1440.avif") type("image/avif") 2x,
+            url("hero-800.avif") type("image/avif") 3x
+          );
+        background-position: right;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      @supports not (
+        background: image-set(url("x.avif") type("image/avif") 1x)
+      ) {
+        .hero {
+          background: linear-gradient(
+              90deg,
+              rgba(255, 255, 255, 1) 0%,
+              rgba(255, 255, 255, 0) 75%
+            ),
+            image-set(
+              url("hero-2000.webp") type("image/webp") 1x,
+              url("hero-1440.webp") type("image/webp") 2x,
+              url("hero-800.webp") type("image/webp") 3x
+            );
+        }
+      }
+
+      .hero__grid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        align-items: center;
+        color: var(--black);
+      }
+      .hero__desc {
+        padding: 48px 0;
+        line-height: 1.35;
+      }
+      .lead {
+        margin: 24px 0 48px;
+        font-size: 24px;
+        font-weight: 500;
+      }
+      @media (max-width: 768px) {
+        .hero__grid {
+          grid-template-columns: 1fr;
+        }
+        .hero__desc {
+          padding: 0 0 280px;
+          text-align: center;
+        }
+        .lead {
+          font-size: 14px;
+        }
+        .hero {
+          padding: 32px 0;
+          background: linear-gradient(
+              0deg,
+              rgba(255, 255, 255, 0) 0%,
+              rgba(255, 255, 255, 0) 35%,
+              rgba(255, 255, 255, 1) 90%
+            ),
+            image-set(
+              url("hero mob-2000.avif") type("image/avif") 1x,
+              url("hero mob-1440.avif") type("image/avif") 2x,
+              url("hero mob-800.avif") type("image/avif") 3x
+            );
+          background-position: 0% 70%;
+          background-size: 110%;
+          background-repeat: no-repeat;
+        }
+        @supports not (
+          background: image-set(url("x.avif") type("image/avif") 1x)
+        ) {
+          .hero {
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0) 35%,
+                rgba(255, 255, 255, 1) 90%
+              ),
+              image-set(
+                  url("hero mob-2000.webp") type("image/webp") 1x,
+                  url("hero mob-1440.webp") type("image/webp") 2x,
+                  url("hero mob-800.webp") type("image/webp") 3x
+                )
+                right/cover no-repeat;
+          }
+        }
+      }
+
+      @media (max-width: 500px) {
+        .hero {
+          background-position: bottom;
+          background-size: 100%;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .hero {
+          background-position: bottom;
+          background-size: 150%;
+        }
+      }
+
+      /* WHY */
+      #dlaczego {
+        padding: 56px 24px 76px;
+      }
+      #dlaczego h2 {
+        text-align: center;
+        margin-bottom: 36px;
+      }
+      .why {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: var(--bg-card);
+        padding: 44px 24px 12px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 24px;
+      }
+      .card img {
+        width: 80px;
+        height: 80px;
+      }
+      @media (max-width: 768px) {
+        #dlaczego {
+          padding: 26px 0 46px;
+        }
+        .why {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+          padding: 0 20px;
+        }
+        .card {
+          font-size: 10px;
+          padding: 20px 12px 16px;
+        }
+        .card img {
+          width: 36px;
+          height: 36px;
+        }
+      }
+      @media (max-width: 1024px) {
+        .why {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* HOW */
+      #jak-dzialamy {
+        letter-spacing: 1px;
+        color: #fff;
+      }
+      .desc-card > *:nth-child(1) {
+        margin: 0 0 3px;
+        font-size: 36px;
+        font-weight: 700;
+      }
+      .desc-card *:nth-child(2) {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 500;
+      }
+      .steps-warpper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 84px;
+        row-gap: 72px;
+        margin-bottom: 28px;
+        line-height: 1.4;
+        text-align: left;
+      }
+      .step__num {
+        font-weight: 700;
+        font-size: 48px;
+        padding-bottom: 12px;
+        margin-bottom: 24px;
+        border-bottom: 3px solid var(--primary);
+      }
+      .step .desc-card p {
+        font-size: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .desc-card > *:nth-child(1) {
+          font-size: 20px;
+        }
+        .desc-card *:nth-child(2) {
+          font-size: 14px;
+        }
+        .steps {
+          grid-template-columns: 1fr;
+          row-gap: 32px;
+          text-align: center;
+        }
+        .step__num {
+          width: 50%;
+          justify-self: center;
+          font-size: 24px;
+        }
+        .step .desc-card h3 {
+          font-size: 16px;
+        }
+        .step .desc-card p {
+          font-size: 13px;
+        }
+      }
+
+      /* ===== SERVICES (tło) ===== */
+      #uslugi2 {
+        background: #e5e6e9;
+      }
+      .services {
+        background-position: 25% 75%;
+        background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(231, 231, 234, 0) 50%,
+            rgba(231, 231, 234, 1) 100%
+          ),
+          image-set(
+              url("tool-2000.avif") type("image/avif") 1x,
+              url("tool-1440.avif") type("image/avif") 2x,
+              url("tool-800.avif") type("image/avif") 3x
+            )
+            center/cover no-repeat;
+      }
+      @supports not (
+        background: image-set(url("x.avif") type("image/avif") 1x)
+      ) {
+        .services {
+          background: linear-gradient(
+              90deg,
+              rgba(255, 255, 255, 0) 0%,
+              rgba(231, 231, 234, 0) 50%,
+              rgba(231, 231, 234, 1) 100%
+            ),
+            image-set(
+                url("tool-2000.webp") type("image/webp") 1x,
+                url("tool-1440.webp") type("image/webp") 2x,
+                url("tool-800.webp") type("image/webp") 3x
+              )
+              center/cover no-repeat;
+        }
+      }
+      .services__container {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        padding: 80px 0 64px;
+      }
+      .services__content {
+        line-height: 1;
+        width: 58%;
+      }
+      .services__container .desc-card p {
+        font-size: 20px;
+      }
+      .services__disclaimer {
+        width: 100%;
+        margin-top: 53px;
+        font-weight: 700;
+        font-size: 28px;
+        text-align: center;
+      }
+      .services__disclaimer strong {
+        color: var(--primary);
+      }
+      .services__grid {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 44px;
+      }
+      .services__item {
+        font-size: 20px;
+      }
+      .check {
+        display: flex;
+        gap: 12px;
+      }
+      @media (max-width: 768px) {
+        #uslugi2 {
+          background: linear-gradient(90deg, #eff0f1 0%, #cad2d7 100%);
+        }
+        .services {
+          background: url(tool\ mob.png);
+          background-size: 50% auto;
+          background-position: 0% 100%;
+          background-repeat: no-repeat;
+        }
+        .services__container {
+          padding: 32px 20px 42px;
+          margin: 0 auto;
+        }
+        .services__content {
+          width: 100%;
+        }
+        .services__item {
+          font-size: 12px;
+        }
+        .services__grid {
+          width: fit-content;
+          margin: 24px auto;
+        }
+        .services__container .desc-card {
+          text-align: center;
+        }
+        .services__disclaimer {
+          text-align: right;
+          margin-right: 40px;
+          margin-top: 200px;
+          font-size: 14px;
+          width: 50%;
+        }
+      }
+      @media (max-width: 600px) {
+        .services {
+          background-size: 60% auto;
+          background-position: -20% 100%;
+        }
+        .services__disclaimer {
+          margin-right: 0;
+          margin-top: 150px;
+        }
+      }
+      @media (max-width: 470px) {
+        .services {
+          background-size: 70% auto;
+          background-position: -40% 100%;
+        }
+        .services__disclaimer {
+          margin-top: 100px;
+          width: 50%;
+        }
+      }
+
+      /* ===== Opinion ====== */
+      .opinion__heading {
+        font-weight: 700;
+        font-size: 36px;
+        text-align: center;
+      }
+      .opinion__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 54px;
+      }
+      .opinion__item {
+        align-items: flex-start;
+        gap: 4px;
+        font-weight: 500;
+        text-align: left;
+        padding: 32px;
+      }
+      .opinion__icon {
+        font-size: 100px;
+        color: var(--primary);
+        height: 32px;
+        line-height: 1;
+        margin: 0;
+      }
+      @media (max-width: 768px) {
+        .opinion__icon {
+          font-size: 80px;
+        }
+        .opinion__list {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .opinion__heading {
+          font-size: 20px;
+          margin: 0 0 15px;
+        }
+      }
+
+      /* ===== FAQ (tło) ===== */
+      .faq {
+        padding-top: 56px;
+        color: var(--white);
+        background-color: var(--header);
+      }
+      .faq__container {
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        padding-right: 0;
+      }
+      .faq__content {
+        z-index: 2;
+        padding-bottom: 56px;
+      }
+      .faq__heading {
+        margin: 48px 0;
+        font-size: 36px;
+      }
+      .faq__hero {
+        position: relative;
+        height: 700px;
+        width: 700px;
+      }
+      .faq__circle {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        bottom: -150px;
+        right: -180px;
+        border-radius: 50%;
+        background-color: var(--primary);
+      }
+      .faq__circle::after {
+        content: "";
+        position: absolute;
+        bottom: -50px;
+        height: 200px;
+        width: 100%;
+        background-color: #fff;
+      }
+      .faq__img {
+        background: url(questions_bg.png) -300px / cover no-repeat;
+        width: 750px;
+        height: 750px;
+        position: absolute;
+        bottom: 0;
+        right: -220px;
+      }
+      .accordion {
+        display: grid;
+        gap: 12px;
+        max-width: 730px;
+        margin-top: 8px;
+      }
+      .accordion > div {
+        padding-bottom: 18px;
+        border-bottom: 1px solid #fff;
+      }
+      .accordion > div:last-of-type {
+        border-bottom: 0;
+      }
+      .accordion button {
+        width: 100%;
+        text-align: left;
+        font-size: 24px;
+        font-weight: 700;
+        background: transparent;
+        color: #fff;
+        border: 0;
+        padding: 12px 48px 6px 16px;
+        position: relative;
+        cursor: pointer;
+      }
+      .accordion button[aria-expanded="true"] {
+        color: var(--primary);
+      }
+      .accordion button:after {
+        content: "";
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        width: 18px;
+        height: 18px;
+        translate: 0 -50%;
+        background: url("chevron-white.svg") center/contain no-repeat;
+
+        transform: rotate(90deg);
+        transition: transform 0.2s;
+      }
+      .accordion button[aria-expanded="true"]:after {
+        transform: rotate(270deg);
+        background: url("chevron-primary.svg") center/contain no-repeat;
+      }
+      .accordion .panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease;
+        padding: 0 16px;
+      }
+      .accordion .panel__inner {
+        padding-bottom: 16px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      @media (max-width: 768px) {
+        .faq {
+          padding-top: 20px;
+          overflow: hidden;
+        }
+        .faq__heading {
+          font-size: 20px;
+          margin: 12px 0;
+        }
+        .faq__container {
+          flex-direction: column;
+          align-items: center;
+        }
+        .faq__content {
+          padding-right: 20px;
+        }
+        .accordion button {
+          font-size: 14px;
+        }
+        .accordion .panel__inner {
+          font-size: 12px;
+        }
+
+        .faq__hero {
+          height: 300px;
+          width: 100%;
+        }
+        .faq__circle {
+          width: 280px;
+          height: 280px;
+          bottom: -50px;
+          right: -20px;
+        }
+        .faq__circle::after {
+          bottom: -150px;
+          height: 200px;
+        }
+        .faq__img {
+          background: url(questions_bg.png) -100px / cover no-repeat;
+          width: 370px;
+          height: 370px;
+          right: -20px;
+        }
+      }
+
+      /* CONTACT + footer */
+      .contact {
+        padding: 102px 0 78px;
+      }
+      .contact__container {
+        display: grid;
+        grid-template-areas:
+          "heading heading"
+          "list form"
+          "map form";
+        column-gap: 100px;
+      }
+      .contact__container h2 {
+        grid-area: heading;
+        margin-bottom: 48px;
+      }
+      .contact__list {
+        grid-area: list;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        font-weight: 700;
+      }
+      .contact__list h3 {
+        font-size: 32px;
+        margin: 30px 0 6px;
+      }
+      .contact__item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 28px;
+        word-break: break-all;
+      }
+      .contact__area h4 {
+        font-size: 32px;
+        margin: 80px 0 22px;
+      }
+      .contact__area {
+        grid-area: map;
+      }
+      .contact__map {
+        height: 340px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(map.png);
+        background-position: center;
+      }
+      form {
+        grid-area: form;
+        background: var(--bg-card);
+        padding: 30px 76px 86px;
+      }
+      form h3 {
+        font-size: 32px;
+        margin: 0 0 50px;
+      }
+      label {
+        display: block;
+        font-weight: 500;
+        font-size: 18px;
+        margin: 20px 0 10px;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 14px 12px;
+        border-radius: 2px;
+        border: 1px solid #eef4ff;
+        font: inherit;
+      }
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+      form button {
+        justify-content: center;
+        width: 100%;
+        margin-top: 42px;
+      }
+
+      @media (max-width: 768px) {
+        .contact {
+          padding: 32px 0;
+        }
+        .contact__container {
+          grid-template-areas:
+            "heading heading"
+            "list list"
+            "form form"
+            "map map";
+        }
+        .contact__container h2 {
+          margin: 0;
+          text-align: center;
+        }
+        .contact__item {
+          font-size: 16px;
+        }
+        .contact__list {
+          gap: 16px;
+          margin-bottom: 40px;
+        }
+        .contact__list h3 {
+          font-size: 16px;
+        }
+        .contact__item img {
+          height: 22px;
+          width: 22px;
+        }
+        form {
+          padding: 32px 24px 54px;
+        }
+        form h3 {
+          font-size: 16px;
+          margin: 0 0 20px;
+        }
+        label {
+          margin: 8px 0 8px;
+          font-size: 14px;
+        }
+        input,
+        textarea {
+          font-size: 13px;
+          padding: 14px 12px;
+        }
+        .contact__area h4 {
+          font-size: 16px;
+          margin: 40px 0 28px;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .contact__map {
+          height: 200px;
+        }
+      }
+
+      /* //footer */
+      .footer {
+        background: var(--header);
+        color: #fff;
+        font-weight: 500;
+      }
+      .footer__title {
+        padding: 72px 0;
+        text-align: center;
+        border-bottom: 1px solid var(--bg-card);
+      }
+      .footer__title h2 {
+        color: var(--primary);
+        margin: 0 0 12px;
+      }
+      .footer__title p,
+      .footer__title strong {
+        margin: 0;
+        color: #fff;
+        font-size: 32px;
+        font-weight: 500;
+      }
+      .footer__title strong {
+        font-weight: 900;
+      }
+      .footer__grid {
+        display: flex;
+        gap: 100px;
+        padding: 30px 24px;
+      }
+      .footer__grid .logo {
+        flex-basis: 180px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-weight: 700;
+      }
+      .footer__grid .logo img {
+        width: 140px;
+      }
+      .footer__contact {
+        flex-grow: 1;
+        font-size: 20px;
+        line-height: 1.8;
+      }
+      .footer__contact h4 {
+        font-weight: 700;
+        margin: 0;
+      }
+      .footer__contact a {
+        font-size: 16px;
+        display: block;
+      }
+      .footer__nav,
+      .footer__config {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.8;
+      }
+      .social {
+        margin-top: 28px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      @media (max-width: 768px) {
+        .footer__title {
+          padding: 32px 20px;
+        }
+        .footer__title h2 {
+          font-size: 18px;
+        }
+        .footer__title p,
+        .footer__title strong {
+          font-size: 16px;
+        }
+        .footer__grid .logo {
+          flex-basis: unset;
+        }
+        .footer__grid {
+          flex-direction: column;
+          text-align: center;
+          gap: 32px;
+        }
+        .footer__contact .social {
+          justify-content: center;
+        }
+        .footer__grid .logo img {
+          width: 92px;
+        }
+      }
+    </style>
+    <style id="about">
+      /* // dodane tutaj zeby iniknac problemow z minifikacja */
+      /* ===== ABOUT (tło) ===== */
+      .about {
+        line-height: 1.2;
+        padding: 82px 0;
+        background: linear-gradient(
+            90deg,
+            #ffffff 21%,
+            rgba(255, 255, 255, 0.6) 54%,
+            rgba(255, 255, 255, 0) 63%
+          ),
+          image-set(
+              url("about-bg-2000.avif") type("image/avif") 1x,
+              url("about-bg-1440.avif") type("image/avif") 2x,
+              url("about-bg-800.avif") type("image/avif") 3x
+            )
+            bottom 10% left 120px / cover no-repeat,
+          #111;
+      }
+      @supports not (
+        background: image-set(url("x.avif") type("image/avif") 1x)
+      ) {
+        .about {
+          background: linear-gradient(
+              90deg,
+              #ffffff 21%,
+              rgba(255, 255, 255, 0.6) 54%,
+              rgba(255, 255, 255, 0) 63%
+            ),
+            image-set(
+                url("about-bg-2000.webp") type("image/webp") 1x,
+                url("about-bg-1440.webp") type("image/webp") 2x,
+                url("about-bg-800.webp") type("image/webp") 3x
+              )
+              right/cover no-repeat,
+            #111;
+        }
+      }
+      .about__content {
+        width: 50%;
+      }
+      @media (max-width: 768px) {
+        .about {
+          padding: 0;
+          background: image-set(
+            url("about-bg-2000.avif") type("image/avif") 1x,
+            url("about-bg-1440.avif") type("image/avif") 2x,
+            url("about-bg-800.avif") type("image/avif") 3x
+          );
+          @supports not (
+            background: image-set(url("x.avif") type("image/avif") 1x)
+          ) {
+            .about {
+              background: image-set(
+                url("about-bg-2000.webp") type("image/webp") 1x,
+                url("about-bg-1440.webp") type("image/webp") 2x,
+                url("about-bg-800.webp") type("image/webp") 3x
+              );
+            }
+          }
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position-y: 100px;
+        }
+        .about .container {
+          padding: 0;
+        }
+        .about__content {
+          width: 100%;
+          padding: 32px 20px 240px;
+          background: linear-gradient(
+            180deg,
+            #ffffff 61%,
+            rgba(255, 255, 255, 0.6) 67%,
+            rgba(255, 255, 255, 0) 70%
+          );
+        }
+        .about__content .desc-card {
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 650px) {
+        .about {
+          background-position-x: center;
+        }
+      }
+      @media (max-width: 550px) {
+        .about {
+          background-position-y: 110px;
+        }
+      }
+      @media (max-width: 400px) {
+        .about {
+          background-position-x: -20px;
+        }
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Pewny Odbiór",
+        "url": "https://pewnyodbiordomu.pl",
+        "image": "hero-1440.jpg",
+        "telephone": "+48 698 510 511",
+        "email": "pewnyodbiordomu@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Małopolska",
+          "addressCountry": "PL"
+        },
+        "areaServed": "Małopolska",
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61580088790049",
+          "https://www.instagram.com/pewny_odbior_domu_i_mieszkania/"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <div
+        class="container nav"
+        role="navigation"
+        aria-label="Główna nawigacja"
+      >
+        <a href="#start" class="logo" aria-label="Pewny Odbiór">
+          <img
+            src="logo.svg"
+            alt="Pewny Odbiór — logo"
+            width="92"
+            decoding="async"
+          />
+          <span
+            ><strong>PEWNY</strong> <strong>ODBIÓR</strong> <br />Domu i
+            Mieszkania</span
+          >
+        </a>
+        <nav class="nav__links">
+          <a href="#jak-dzialamy" class="js-link">Jak działamy</a>
+          <a href="#uslugi" class="js-link">Usługi</a>
+          <a href="#o-nas" class="js-link">O nas</a>
+          <a href="#opinie" class="js-link">Opinie</a>
+          <a href="#kontakt" class="js-link">Kontakt</a>
+        </nav>
+        <div class="mobile-menu-socials">
+          <a
+            href="https://www.facebook.com/profile.php?id=61580088790049"
+            aria-label="Facebook"
+          >
+            <img src="fb-icon.svg" alt="Facebook" />
+          </a>
+          <a
+            href="https://www.instagram.com/pewny_odbior_domu_i_mieszkania/"
+            aria-label="Instagram"
+          >
+            <img src="ig-icon.svg" alt="Instagram" />
+          </a>
+        </div>
+        <div class="mobile-header-control">
+          <button class="mobile-header-toggle" aria-label="Otwórz menu">
+            <img src="hamburger.svg" alt="Menu" class="icon-hamburger" />
+            <img src="x.svg" alt="Zamknij" class="icon-close" />
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section hero" id="start">
+        <div class="container hero__grid">
+          <div class="hero__desc">
+            <h1>
+              TWÓJ <span style="color: var(--primary)">PEWNY</span> ODBIÓR
+              MIESZKANIA I DOMU — BEZ STRESU I UKRYTYCH WAD
+            </h1>
+            <p class="lead">
+              Zaufaj zespołowi ekspertów, którzy znajdą każdy <br />
+              szczegół i zadbają o Twój spokój.
+            </p>
+            <a href="#kontakt" class="btn btn--primary">
+              <span> Umów odbiór </span>
+              <img src="chevron.svg" alt="arrow right" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="dlaczego" class="container">
+        <h2>Dlaczego warto odebrać mieszkanie z ekspertem?</h2>
+        <div class="why" role="list" style="margin-top: 20px">
+          <article class="card" role="listitem">
+            <img src="why1.svg" alt="" loading="lazy" decoding="async" />
+            <p>Wykrywamy ukryte wady niewidoczne gołym okiem</p>
+          </article>
+          <article class="card" role="listitem">
+            <img src="why2.svg" alt="" loading="lazy" decoding="async" />
+            <p>Sporządzamy profesjonalny protokół dla dewelopera</p>
+          </article>
+          <article class="card" role="listitem">
+            <img src="why3.svg" alt="" loading="lazy" decoding="async" />
+            <p>Oszczędzasz na kosztach napraw w przyszłości</p>
+          </article>
+          <article class="card" role="listitem">
+            <img src="why4.svg" alt="" loading="lazy" decoding="async" />
+            <p>Odbiór szybki i bezstresowy</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="jak-dzialamy" class="section section--alt">
+        <div class="container steps-warpper">
+          <div class="desc-card">
+            <h2>Jak działamy</h2>
+            <p>Prosty proces – od zgłoszenia po odbiór</p>
+          </div>
+          <div class="steps" style="margin-top: 20px">
+            <div class="step">
+              <div class="step__num">01</div>
+              <div class="desc-card">
+                <h3>Kontakt</h3>
+                <p>Umawiamy termin online lub telefonicznie</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step__num">02</div>
+              <div class="desc-card">
+                <h3>Spotkanie na miejscu</h3>
+                <p>
+                  Przychodzimy na odbiór z niezbędnym <br />
+                  sprzętem
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step__num">03</div>
+              <div class="desc-card">
+                <h3>Wykrycie usterek</h3>
+                <p>Sprawdzamy każdy detal techniczny</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step__num">04</div>
+              <div class="desc-card">
+                <h3>Raport i wsparcie</h3>
+                <p>
+                  Otrzymujesz raport, a my pomagamy <br />
+                  w negocjacjach z deweloperem
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="uslugi2">
+        <!-- uslugi2 to be romoved -->
+        <section id="uslugi" class="services">
+          <div class="container services__container">
+            <div class="services__content">
+              <div class="desc-card">
+                <h2>Nasze usługi</h2>
+                <p>Profesjonalne odbiory i inspekcje</p>
+              </div>
+              <div class="services__grid">
+                <div class="check">
+                  <img
+                    src="checkmark.svg"
+                    alt=""
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                  />
+                  <div class="services__item">
+                    <strong>Odbiór techniczny mieszkania od dewelopera</strong
+                    ><br /><span
+                      >Sprawdzimy instalacje, stolarkę, powierzchnie i zgodność
+                      przedmiotu z umową.</span
+                    >
+                  </div>
+                </div>
+                <div class="check">
+                  <img
+                    src="checkmark.svg"
+                    alt=""
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                  />
+                  <div class="services__item">
+                    <strong>Odbiór z termowizją</strong><br /><span
+                      >Wykryjemy mostki termiczne, nieszczelności, zawilgocenia
+                      i problemy z izolacją.</span
+                    >
+                  </div>
+                </div>
+                <div class="check">
+                  <img
+                    src="checkmark.svg"
+                    alt=""
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                  />
+                  <div class="services__item">
+                    <strong>Odbiór domu od dewelopera</strong><br /><span
+                      >Pełna kontrola fundamentów, izolacji, instalacji
+                      powierzchni oraz przynależności.</span
+                    >
+                  </div>
+                </div>
+                <div class="check">
+                  <img
+                    src="checkmark.svg"
+                    alt=""
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                  />
+                  <div class="services__item">
+                    <strong
+                      >Inspekcja mieszkania lub domu na rynku wtórnym</strong
+                    ><br /><span
+                      >Rzetelna ocena stanu technicznego nieruchomości przed
+                      zakupem.</span
+                    >
+                  </div>
+                </div>
+                <div class="check">
+                  <img
+                    src="checkmark.svg"
+                    alt=""
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                  />
+                  <div class="services__item">
+                    <strong
+                      >Pomiar powierzchni użytkowej lokalu
+                      (rozliczeniowej)</strong
+                    ><br /><span
+                      >Rzetelny pomiar powierzchni potwierdzony przez osobę
+                      uprawnioną do jego wykonania.</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="services__disclaimer">
+              Każda wycena przygotowywana jest <strong>indywidualnie</strong>
+              <br />– dostosowana do Twoich potrzeb i lokalizacji.
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section id="o-nas" class="about">
+        <div class="container">
+          <div class="about__content">
+            <div class="desc-card">
+              <span>O nas</span>
+              <h2>Eksperci z doświadczeniem w budownictwie i technice</h2>
+            </div>
+            <p>
+              Jesteśmy zespołem inżynierów budownictwa z wieloletnim
+              doświadczeniem oraz uprawnieniami konstrukcyjno-budowlanymi
+              Polskiej Izby Inżynierów Budownictwa  do prowadzenia robót
+              budowlanych bez ograniczeń. Dzięki wiedzy i specjalistycznemu
+              sprzętowi gwarantujemy pewny i bezpieczny odbiór nieruchomości.
+              Każdy odbiór traktujemy indywidualnie – naszym celem jest Twój
+              spokój i pewność, że inwestujesz w nieruchomość bez wad. Pracujemy
+              niezależnie – stoimy zawsze po stronie klienta, a nie dewelopera.
+              Z nami odbiór przebiega sprawnie, rzetelnie i bez stresu. Dzielimy
+              się pomocnymi radami z zakresu wykończenia, odpowiadamy na każde
+              pytanie klienta.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="opinie" class="section opinion">
+        <div class="container">
+          <p class="opinion__heading">Opinie klientów</p>
+          <div class="opinion__list">
+            <div class="card opinion__item">
+              <p class="opinion__icon">”</p>
+              <p>
+                „Dzięki ‘Pewny Odbiór’ odkryliśmy kilkanaście usterek, które
+                deweloper musiał naprawić. Zaoszczędziliśmy sporo nerwów i
+                pieniędzy – zdecydowanie polecam!”
+              </p>
+              <strong>Anna, Kraków</strong>
+            </div>
+            <div class="card opinion__item">
+              <p class="opinion__icon">”</p>
+              <p>
+                „Profesjonalizm od początku do końca. Raport był szczegółowy i
+                pomógł nam wynegocjować poprawki jeszcze przed przeprowadzką.”
+              </p>
+              <strong>Michał, Kraków</strong>
+            </div>
+            <div class="card opinion__item">
+              <p class="opinion__icon">”</p>
+              <p>
+                „Nie miałam pojęcia, na co zwracać uwagę przy odbiorze. Wszystko
+                zostało wykryte i dokładnie opisane. Polecam każdemu!”
+              </p>
+              <strong> Katarzyna, Kraków</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq">
+        <div class="container faq__container">
+          <div class="faq__content">
+            <h2 class="faq__heading">Najczęściej zadawane pytania</h2>
+            <div class="accordion" id="faq-acc">
+              <div>
+                <button type="button" aria-controls="p1" aria-expanded="true">
+                  Czy muszę być obecny podczas odbioru?
+                </button>
+                <div
+                  id="p1"
+                  class="panel"
+                  role="region"
+                  style="max-height: 180px"
+                >
+                  <div class="panel__inner">
+                    Nie, możemy wykonać odbiór w Twoim imieniu. Wystarczy
+                    upoważnienie lub informacja dla dewelopera.
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button type="button" aria-controls="p2" aria-expanded="false">
+                  Jak długo trwa odbiór mieszkania?
+                </button>
+                <div id="p2" class="panel" role="region">
+                  <div class="panel__inner">
+                    Średnio 1,5–2h w zależności od metrażu i zakresu.
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button type="button" aria-controls="p3" aria-expanded="false">
+                  Czy oferujecie wsparcie po odbiorze?
+                </button>
+                <div id="p3" class="panel" role="region">
+                  <div class="panel__inner">
+                    Tak, pomagamy w komunikacji z deweloperem i egzekwowaniu
+                    poprawek.
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button type="button" aria-controls="p4" aria-expanded="false">
+                  Czy mogę zamówić odbiór z dnia na dzień?
+                </button>
+                <div id="p4" class="panel" role="region">
+                  <div class="panel__inner">
+                    W miarę dostępności terminów – staramy się znaleźć szybki
+                    termin.
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button type="button" aria-controls="p4" aria-expanded="false">
+                  Jakim sprzętem wykonujecie odbiory?
+                </button>
+                <div id="p4" class="panel" role="region">
+                  <div class="panel__inner">
+                    Korzystamy z poziomic laserowych, kamer termowizyjnych,
+                    wilgotnościomierzy, mierników elektrycznych i innych
+                    narzędzi.
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button type="button" aria-controls="p4" aria-expanded="false">
+                  Czy wasze usługi obejmują także rynek wtórny?
+                </button>
+                <div id="p4" class="panel" role="region">
+                  <div class="panel__inner">
+                    Tak, przeprowadzamy szczegółowe inspekcje mieszkań i domów
+                    przed zakupem.
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button type="button" aria-controls="p4" aria-expanded="false">
+                  Czy przygotowujecie raport pisemny po odbiorze?
+                </button>
+                <div id="p4" class="panel" role="region">
+                  <div class="panel__inner">
+                    Tak, każdy odbiór kończy się raportem z listą usterek i
+                    rekomendacjami.
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button type="button" aria-controls="p4" aria-expanded="false">
+                  Czy pomagacie negocjować z deweloperem?
+                </button>
+                <div id="p4" class="panel" role="region">
+                  <div class="panel__inner">
+                    Tak, wspieramy w rozmowach i wskazujemy, jak egzekwować
+                    poprawki.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="faq__hero">
+            <div class="faq__circle"></div>
+            <div class="faq__img"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="kontakt" class="section contact">
+        <div class="container contact__container">
+          <h2>Umów odbiór już dziś!</h2>
+
+          <div class="contact__list">
+            <h3>Skontaktuj się z nami</h3>
+            <div class="contact__item">
+              <img src="contact-phone.svg" alt="" /><a href="tel:+48698510511"
+                >+48 698 510 511</a
+              >
+            </div>
+            <div class="contact__item">
+              <img src="contact-mail.svg" alt="" /><a
+                href="mailto:pewnyodbiordomu@gmail.com"
+                >pewnyodbiordomu@gmail.com</a
+              >
+            </div>
+          </div>
+          <div class="contact__area">
+            <h4>Zrealizowane odbiory</h4>
+            <div class="contact__map"></div>
+          </div>
+
+          <form id="contact-form" action="/send.php" method="POST">
+            <h3>Formularz kontaktowy</h3>
+            <label for="name">Imię i nazwisko</label>
+            <input
+              id="name"
+              name="name"
+              required
+              autocomplete="name"
+              placeholder="eg: Jan Kowalski"
+            />
+            <label for="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="eg: jan@email.com"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            />
+            />
+            <label for="phone">Telefon</label>
+            <input
+              id="phone"
+              type="tel"
+              name="phone"
+              autocomplete="tel"
+              required
+              placeholder="698510511"
+              pattern="^\+?48[ ]?(\d{3}[ ]?){2}\d{3}$|^(\d{3}[ ]?){2}\d{3}$"
+              title="Proszę podać 9 cyfr, opcjonalnie z kodem +48. Dozwolone są spacje (np. +48 48698510511)."
+            />
+            <label for="message">Wiadomość</label>
+            <textarea id="message" name="message" required></textarea>
+            <input
+              type="text"
+              name="_honeypot"
+              tabindex="-1"
+              autocomplete="off"
+              style="position: absolute; left: -9999px"
+              aria-hidden="true"
+            />
+            <button class="btn btn--primary" type="submit">
+              <span> Wyślij zgłoszenie </span>
+              <img src="chevron.svg" alt="arrow right" />
+            </button>
+            <p id="form-result" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="section footer__title">
+        <h2>GWARANCJA JAKOŚCI USŁUG</h2>
+        <p>
+          <strong> 100% klientów </strong> wyraża zadowolenie i chęć ponownej
+          współpracy.
+        </p>
+      </div>
+      <div class="container footer__grid">
+        <a href="#start" class="logo" aria-label="Pewny Odbiór">
+          <img
+            src="logo.svg"
+            alt="Pewny Odbiór — logo"
+            width="92"
+            decoding="async"
+          />
+          <span
+            ><strong>PEWNY</strong> <strong>ODBIÓR</strong> <br />Domu i
+            Mieszkania</span
+          >
+        </a>
+        <div class="footer__contact">
+          <h4>Kontakt:</h4>
+          <a href="tel:+48698510511">Tel: +48 698 510 511</a>
+          <a href="mailto:pewnyodbiordomu@gmail.com"
+            >Email: pewnyodbiordomu@gmail.com</a
+          >
+          <div class="social">
+            <a
+              href="https://www.facebook.com/profile.php?id=61580088790049"
+              aria-label="Facebook"
+              ><img src="fb-icon.svg" width="22" height="22" alt=""
+            /></a>
+            <a
+              href="https://www.instagram.com/pewny_odbior_domu_i_mieszkania/"
+              aria-label="Instagram"
+              ><img src="ig-icon.svg" width="22" height="22" alt=""
+            /></a>
+          </div>
+        </div>
+        <nav class="footer__nav">
+          <a href="#jak-dzialamy" class="js-link">Jak działamy</a>
+          <a href="#uslugi" class="js-link">Usługi</a>
+          <a href="#o-nas" class="js-link">O nas</a>
+          <a href="#opinie" class="js-link">Opinie</a>
+        </nav>
+        <nav class="footer__config">
+          <a href="polityka-prywatnosci.pdf" target="_blank" class="js-link"
+            >Polityka prywatności
+          </a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.querySelector(".mobile-header-toggle");
+        const menu = document.querySelector("header div.nav");
+        menu.addEventListener("click", (e) => {
+          if (e.target.tagName.toLowerCase() === "a") {
+            menu.classList.remove("open");
+          }
+        });
+
+        toggle.addEventListener("click", () => {
+          const isOpen = menu.classList.toggle("open");
+          toggle.setAttribute(
+            "aria-label",
+            isOpen ? "Zamknij menu" : "Otwórz menu"
+          );
+        });
+      });
+    </script>
+
+    <script>
+      /* Smooth-scroll + aktywny link */
+      const links = [
+        ...document.querySelectorAll('.js-link, header a[href^="#"]'),
+      ];
+      const sections = [...document.querySelectorAll("section[id]")];
+      const setActive = () => {
+        const y = scrollY + 110;
+        const curr = sections.findLast((s) => s.offsetTop <= y);
+        links.forEach((a) =>
+          a.classList.toggle(
+            "is-active",
+            curr && a.getAttribute("href") === "#" + curr.id
+          )
+        );
+      };
+      addEventListener("scroll", setActive);
+      setActive();
+
+      /* FAQ accordion — jeden otwarty */
+      const acc = document.getElementById("faq-acc");
+      acc.querySelectorAll("button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          acc.querySelectorAll('button[aria-expanded="true"]').forEach((b) => {
+            if (b !== btn) {
+              b.setAttribute("aria-expanded", "false");
+              const p = b.nextElementSibling;
+              p.style.maxHeight = null;
+            }
+          });
+          const p = btn.nextElementSibling;
+          const open = btn.getAttribute("aria-expanded") === "true";
+          btn.setAttribute("aria-expanded", String(!open));
+          p.style.maxHeight = open ? null : p.scrollHeight + "px";
+        });
+      });
+
+      /* Formularz */
+      const form = document.getElementById("contact-form");
+      const res = document.getElementById("form-result");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        res.textContent = "";
+        if (form._honeypot.value) {
+          return;
+        }
+        const data = new FormData(form);
+        if (!data.get("name") || !data.get("email") || !data.get("message")) {
+          res.textContent = "Uzupełnij wymagane pola.";
+          return;
+        }
+        try {
+          const r = await fetch(form.action, { method: "POST", body: data });
+          res.textContent = r.ok
+            ? "Dziękujemy! Wiadomość została wysłana."
+            : "Ups… spróbuj ponownie.";
+          if (r.ok) form.reset();
+        } catch {
+          res.textContent = "Błąd połączenia. Zadzwoń lub napisz mail.";
+        }
+      });
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

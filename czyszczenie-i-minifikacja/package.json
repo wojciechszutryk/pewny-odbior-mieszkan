@@ -1,0 +1,23 @@
+{
+  "name": "czyszczenie-i-minifikacja",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wojciechszutryk/pewny-odbior-mieszkan.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wojciechszutryk/pewny-odbior-mieszkan/issues"
+  },
+  "homepage": "https://github.com/wojciechszutryk/pewny-odbior-mieszkan#readme",
+  "dependencies": {
+    "html-minifier-terser": "^7.2.0",
+    "uncss": "^0.17.3"
+  }
+}
