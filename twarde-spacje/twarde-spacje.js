@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 // --- KONFIGURACJA ---
-const INPUT_FILE = "index.html";
+const INPUT_FILE = "index-dev.html";
 const OUTPUT_FILE = "index.html"; // Zapisuje do nowego pliku w folderze 'dist'
 
 // Regex dla polskich spójników/przyimków (a, i, o, u, w, z)

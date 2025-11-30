@@ -4,7 +4,7 @@ const { minify } = require("html-minifier-terser");
 const uncss = require("uncss");
 
 // --- KONFIGURACJA PLIKÓW ---
-const INPUT_FILE = "../index-dev.html";
+const INPUT_FILE = "../index.html";
 const OUTPUT_FILE = "../index.html";
 
 // --- USTAWIENIA MINIFIKACJI ---
