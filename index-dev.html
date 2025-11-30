@@ -4,10 +4,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pewny Odbiór — Odbiór techniczny mieszkania i domu bez stresu</title>
+    <title>
+      Odbiór mieszkania Kraków i Małopolska – Pewny Odbiór Domu i Mieszkania
+    </title>
     <meta
       name="description"
-      content="Profesjonalny odbiór mieszkania i domu: wykrywanie usterek, raport i wsparcie w negocjacjach z deweloperem. Szybko, bezstresowo, w Małopolsce."
+      content="Odbiór mieszkania lub domu w Krakowie i Małopolsce. Dokładna kontrola instalacji, wykrywanie ukrytych wad, raport i pomoc w rozmowach z deweloperem. Zarezerwuj termin!"
     />
     <meta name="robots" content="index,follow" />
 
@@ -31,7 +33,12 @@
     <meta property="og:image" content="hero-1440.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <link rel="icon" href="logo.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Pewny Odbiór Domu" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <style>
       @font-face {
@@ -80,6 +87,9 @@
         max-width: var(--container);
         margin: 0 auto;
         padding: 0 24px;
+      }
+      .sr-only {
+        visibility: hidden;
       }
       .logo {
         display: flex;
@@ -768,6 +778,10 @@
         position: relative;
         cursor: pointer;
       }
+      .accordion button h3 {
+        margin: 0;
+        font-size: 24px;
+      }
       .accordion button[aria-expanded="true"] {
         color: var(--primary);
       }
@@ -816,6 +830,9 @@
           padding-right: 20px;
         }
         .accordion button {
+          font-size: 14px;
+        }
+        .accordion button h3 {
           font-size: 14px;
         }
         .accordion .panel__inner {
@@ -1174,22 +1191,29 @@
         }
       }
     </style>
-
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
+        "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
         "name": "Pewny Odbiór",
         "url": "https://pewnyodbiordomu.pl",
-        "image": "hero-1440.jpg",
+        "image": "https://pewnyodbiordomu.pl/favicon-96x96.png",
         "telephone": "+48 698 510 511",
         "email": "pewnyodbiordomu@gmail.com",
         "address": {
           "@type": "PostalAddress",
-          "addressRegion": "Małopolska",
+          "streetAddress": "Aleja Pokoju 83",
+          "addressLocality": "Kraków",
+          "postalCode": "31-564",
+          "addressRegion": "małopolskie",
           "addressCountry": "PL"
         },
+        "serviceArea": {
+          "@type": "Place",
+          "name": "Kraków, Małopolska"
+        },
         "areaServed": "Małopolska",
+        "additionalType": "https://schema.org/HomeAndConstructionBusiness",
         "sameAs": [
           "https://www.facebook.com/profile.php?id=61580088790049",
           "https://www.instagram.com/pewny_odbior_domu_i_mieszkania/"
@@ -1260,29 +1284,44 @@
             </p>
             <a href="#kontakt" class="btn btn--primary">
               <span> Umów odbiór </span>
-              <img src="chevron.svg" alt="arrow right" />
+              <img src="chevron.svg" alt="dalej" />
             </a>
           </div>
         </div>
       </section>
 
       <section id="dlaczego" class="container">
-        <h2>Dlaczego warto odebrać mieszkanie z ekspertem?</h2>
+        <h2>Odbiór mieszkania lub domu z ekspertem – dlaczego warto?</h2>
         <div class="why" role="list" style="margin-top: 20px">
           <article class="card" role="listitem">
-            <img src="why1.svg" alt="" loading="lazy" decoding="async" />
+            <img
+              src="why1.svg"
+              loading="lazy"
+              decoding="async"
+              alt="Wykrywanie usterki"
+            />
             <p>Wykrywamy ukryte wady niewidoczne gołym okiem</p>
           </article>
           <article class="card" role="listitem">
-            <img src="why2.svg" alt="" loading="lazy" decoding="async" />
+            <img
+              src="why2.svg"
+              loading="lazy"
+              decoding="async"
+              alt="protokół"
+            />
             <p>Sporządzamy profesjonalny protokół dla dewelopera</p>
           </article>
           <article class="card" role="listitem">
-            <img src="why3.svg" alt="" loading="lazy" decoding="async" />
+            <img
+              src="why3.svg"
+              loading="lazy"
+              decoding="async"
+              alt="oszczędność"
+            />
             <p>Oszczędzasz na kosztach napraw w przyszłości</p>
           </article>
           <article class="card" role="listitem">
-            <img src="why4.svg" alt="" loading="lazy" decoding="async" />
+            <img src="why4.svg" loading="lazy" decoding="async" alt="odbiór" />
             <p>Odbiór szybki i bezstresowy</p>
           </article>
         </div>
@@ -1291,7 +1330,7 @@
       <section id="jak-dzialamy" class="section section--alt">
         <div class="container steps-warpper">
           <div class="desc-card">
-            <h2>Jak działamy</h2>
+            <h2>Jak działa Pewny Odbiór Domu</h2>
             <p>Prosty proces – od zgłoszenia po odbiór</p>
           </div>
           <div class="steps" style="margin-top: 20px">
@@ -1339,14 +1378,14 @@
           <div class="container services__container">
             <div class="services__content">
               <div class="desc-card">
-                <h2>Nasze usługi</h2>
+                <h2>Nasze usługi odbioru mieszkań i domów</h2>
                 <p>Profesjonalne odbiory i inspekcje</p>
               </div>
               <div class="services__grid">
                 <div class="check">
                   <img
                     src="checkmark.svg"
-                    alt=""
+                    alt="potwierdzenie"
                     width="20"
                     height="20"
                     loading="lazy"
@@ -1362,7 +1401,7 @@
                 <div class="check">
                   <img
                     src="checkmark.svg"
-                    alt=""
+                    alt="potwierdzenie"
                     width="20"
                     height="20"
                     loading="lazy"
@@ -1377,7 +1416,7 @@
                 <div class="check">
                   <img
                     src="checkmark.svg"
-                    alt=""
+                    alt="potwierdzenie"
                     width="20"
                     height="20"
                     loading="lazy"
@@ -1392,7 +1431,7 @@
                 <div class="check">
                   <img
                     src="checkmark.svg"
-                    alt=""
+                    alt="potwierdzenie"
                     width="20"
                     height="20"
                     loading="lazy"
@@ -1409,7 +1448,7 @@
                 <div class="check">
                   <img
                     src="checkmark.svg"
-                    alt=""
+                    alt="potwierdzenie"
                     width="20"
                     height="20"
                     loading="lazy"
@@ -1507,85 +1546,113 @@
                   style="max-height: 180px"
                 >
                   <div class="panel__inner">
-                    Nie, możemy wykonać odbiór w Twoim imieniu. Wystarczy
-                    upoważnienie lub informacja dla dewelopera.
+                    <p>
+                      Nie, możemy wykonać odbiór w Twoim imieniu. Wystarczy
+                      upoważnienie lub informacja dla dewelopera.
+                    </p>
                   </div>
                 </div>
               </div>
               <div>
                 <button type="button" aria-controls="p2" aria-expanded="false">
-                  Jak długo trwa odbiór mieszkania?
+                  <h3>Gdzie działa Pewny Odbiór Domu</h3>
                 </button>
                 <div id="p2" class="panel" role="region">
                   <div class="panel__inner">
-                    Średnio 1,5–2h w zależności od metrażu i zakresu.
+                    <p>
+                      Działamy na terenie Małopolski, Świętokrzyskiego, Śląska
+                      oraz Podkarpacia. Dojeżdżamy do mieszkań i domów w dużych
+                      miastach oraz mniejszych miejscowościach w całym regionie.
+                    </p>
                   </div>
                 </div>
               </div>
               <div>
                 <button type="button" aria-controls="p3" aria-expanded="false">
-                  Czy oferujecie wsparcie po odbiorze?
+                  Jak długo trwa odbiór mieszkania?
                 </button>
                 <div id="p3" class="panel" role="region">
                   <div class="panel__inner">
-                    Tak, pomagamy w komunikacji z deweloperem i egzekwowaniu
-                    poprawek.
+                    <p>Średnio 1,5–2h w zależności od metrażu i zakresu.</p>
                   </div>
                 </div>
               </div>
               <div>
                 <button type="button" aria-controls="p4" aria-expanded="false">
+                  Czy oferujecie wsparcie po odbiorze?
+                </button>
+                <div id="p4" class="panel" role="region">
+                  <div class="panel__inner">
+                    <p>
+                      Tak, pomagamy w komunikacji z deweloperem i egzekwowaniu
+                      poprawek.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button type="button" aria-controls="p5" aria-expanded="false">
                   Czy mogę zamówić odbiór z dnia na dzień?
                 </button>
-                <div id="p4" class="panel" role="region">
+                <div id="p5" class="panel" role="region">
                   <div class="panel__inner">
-                    W miarę dostępności terminów – staramy się znaleźć szybki
-                    termin.
+                    <p>
+                      W miarę dostępności terminów – staramy się znaleźć szybki
+                      termin.
+                    </p>
                   </div>
                 </div>
               </div>
               <div>
-                <button type="button" aria-controls="p4" aria-expanded="false">
+                <button type="button" aria-controls="p6" aria-expanded="false">
                   Jakim sprzętem wykonujecie odbiory?
                 </button>
-                <div id="p4" class="panel" role="region">
+                <div id="p6" class="panel" role="region">
                   <div class="panel__inner">
-                    Korzystamy z poziomic laserowych, kamer termowizyjnych,
-                    wilgotnościomierzy, mierników elektrycznych i innych
-                    narzędzi.
+                    <p>
+                      Korzystamy z poziomic laserowych, kamer termowizyjnych,
+                      wilgotnościomierzy, mierników elektrycznych i innych
+                      narzędzi.
+                    </p>
                   </div>
                 </div>
               </div>
               <div>
-                <button type="button" aria-controls="p4" aria-expanded="false">
+                <button type="button" aria-controls="p7" aria-expanded="false">
                   Czy wasze usługi obejmują także rynek wtórny?
                 </button>
-                <div id="p4" class="panel" role="region">
+                <div id="p7" class="panel" role="region">
                   <div class="panel__inner">
-                    Tak, przeprowadzamy szczegółowe inspekcje mieszkań i domów
-                    przed zakupem.
+                    <p>
+                      Tak, przeprowadzamy szczegółowe inspekcje mieszkań i domów
+                      przed zakupem.
+                    </p>
                   </div>
                 </div>
               </div>
               <div>
-                <button type="button" aria-controls="p4" aria-expanded="false">
+                <button type="button" aria-controls="p8" aria-expanded="false">
                   Czy przygotowujecie raport pisemny po odbiorze?
                 </button>
-                <div id="p4" class="panel" role="region">
+                <div id="p8" class="panel" role="region">
                   <div class="panel__inner">
-                    Tak, każdy odbiór kończy się raportem z listą usterek i
-                    rekomendacjami.
+                    <p>
+                      Tak, każdy odbiór kończy się raportem z listą usterek i
+                      rekomendacjami.
+                    </p>
                   </div>
                 </div>
               </div>
               <div>
-                <button type="button" aria-controls="p4" aria-expanded="false">
+                <button type="button" aria-controls="p9" aria-expanded="false">
                   Czy pomagacie negocjować z deweloperem?
                 </button>
-                <div id="p4" class="panel" role="region">
+                <div id="p9" class="panel" role="region">
                   <div class="panel__inner">
-                    Tak, wspieramy w rozmowach i wskazujemy, jak egzekwować
-                    poprawki.
+                    <p>
+                      Tak, wspieramy w rozmowach i wskazujemy, jak egzekwować
+                      poprawki.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -1605,12 +1672,13 @@
           <div class="contact__list">
             <h3>Skontaktuj się z nami</h3>
             <div class="contact__item">
-              <img src="contact-phone.svg" alt="" /><a href="tel:+48698510511"
+              <img src="contact-phone.svg" alt="kontakt telefon" /><a
+                href="tel:+48698510511"
                 >+48 698 510 511</a
               >
             </div>
             <div class="contact__item">
-              <img src="contact-mail.svg" alt="" /><a
+              <img src="contact-mail.svg" alt="kontakt email" /><a
                 href="mailto:pewnyodbiordomu@gmail.com"
                 >pewnyodbiordomu@gmail.com</a
               >
@@ -1618,7 +1686,12 @@
           </div>
           <div class="contact__area">
             <h4>Zrealizowane odbiory</h4>
-            <div class="contact__map"></div>
+            <div class="contact__map">
+              <h5 class="sr-only">
+                Zrealizowane odbiory mieszkań: Małopolska, Świętokrzyskie, Śląsk
+                i Podkarpacie
+              </h5>
+            </div>
           </div>
 
           <form id="contact-form" action="/send.php" method="POST">
@@ -1665,7 +1738,7 @@
             />
             <button class="btn btn--primary" type="submit">
               <span> Wyślij zgłoszenie </span>
-              <img src="chevron.svg" alt="arrow right" />
+              <img src="chevron.svg" alt="wyślij" />
             </button>
             <p id="form-result" role="status" aria-live="polite"></p>
           </form>
@@ -1675,7 +1748,7 @@
 
     <footer class="footer">
       <div class="section footer__title">
-        <h2>GWARANCJA JAKOŚCI USŁUG</h2>
+        <h2>GWARANCJA JAKOŚCI USŁUG ODBIORU</h2>
         <p>
           <strong> 100% klientów </strong> wyraża zadowolenie i chęć ponownej
           współpracy.
@@ -1695,7 +1768,7 @@
           >
         </a>
         <div class="footer__contact">
-          <h4>Kontakt:</h4>
+          <h4>Kontakt (Przemysław):</h4>
           <a href="tel:+48698510511">Tel: +48 698 510 511</a>
           <a href="mailto:pewnyodbiordomu@gmail.com"
             >Email: pewnyodbiordomu@gmail.com</a
@@ -1704,12 +1777,12 @@
             <a
               href="https://www.facebook.com/profile.php?id=61580088790049"
               aria-label="Facebook"
-              ><img src="fb-icon.svg" width="22" height="22" alt=""
+              ><img src="fb-icon.svg" width="22" height="22" alt="facebook"
             /></a>
             <a
               href="https://www.instagram.com/pewny_odbior_domu_i_mieszkania/"
               aria-label="Instagram"
-              ><img src="ig-icon.svg" width="22" height="22" alt=""
+              ><img src="ig-icon.svg" width="22" height="22" alt="instagram"
             /></a>
           </div>
         </div>
@@ -1726,6 +1799,86 @@
         </nav>
       </div>
     </footer>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Czy muszę być obecny podczas odbioru?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nie, możemy wykonać odbiór w Twoim imieniu. Wystarczy upoważnienie lub informacja dla dewelopera."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Gdzie działa Pewny Odbiór Domu",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Działamy na terenie Małopolski, Świętokrzyskiego, Śląska oraz Podkarpacia. Dojeżdżamy do mieszkań i domów w dużych miastach oraz mniejszych miejscowościach w całym regionie."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Jak długo trwa odbiór mieszkania?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Średnio 1,5–2h w zależności od metrażu i zakresu."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy oferujecie wsparcie po odbiorze?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak, pomagamy w komunikacji z deweloperem i egzekwowaniu poprawek."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy mogę zamówić odbiór z dnia na dzień?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "W miarę dostępności terminów – staramy się znaleźć szybki termin."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Jakim sprzętem wykonujecie odbiory?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Korzystamy z poziomic laserowych, kamer termowizyjnych, wilgotnościomierzy, mierników elektrycznych i innych narzędzi."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy wasze usługi obejmują także rynek wtórny?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak, przeprowadzamy szczegółowe inspekcje mieszkań i domów przed zakupem."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy przygotowujecie raport pisemny po odbiorze?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak, każdy odbiór kończy się raportem z listą usterek i rekomendacjami."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy pomagacie negocjować z deweloperem?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak, wspieramy w rozmowach i wskazujemy, jak egzekwować poprawki."
+            }
+          }
+        ]
+      }
+    </script>
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
